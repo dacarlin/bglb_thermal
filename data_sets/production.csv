@@ -1,0 +1,119 @@
+idx,drop_me,mutant,student,date_transform,img_url,colonies,grow_weight,expr_weight,beads,y,norm_y,gel_img_exists,protein_on_gel,assay_data_exists,tm_exists,why_no_tm,in_plos_paper,tm,k
+106,e222h,E222H,Siena,9/28/2015,http://imgur.com/RHUr9RR,2,129,546,0,0.369,0.37,1,0.5,1,1,,1,34.70831193,-0.636222686
+26,Q313R,Q313R,Bill,11/8/2015,http://imgur.com/rSaZwKf,30,105,320,1,0.313,0.63,1,1,1,1,,1,35.81800542,-0.172264671
+55,Q19s,Q19S,Siena ,9/22/2015,http://imgur.com/aiHfZ3D,25,137,270,0,0.183,0.18,1,1,1,1,,1,36.47097293,-0.502002054
+132,W409Y,W409Y,Mary,8/11/2015,http://imgur.com/unWQlD5,125,206,338,0,0.229,0.23,1,1,1,1,,0,36.61492149,-0.392452856
+43,E177K,E177K,Siena,11/9/2015,http://imgur.com/rbmnh36,100,344,367,1,0.147,0.29,1,1,1,1,,1,36.64970183,-0.666760611
+3,E222A,E222A,Natalie,11/8/2015,http://i.imgur.com/d8gHgKA.jpg,76,425,526,1,0.195,0.39,1,1,1,1,,1,36.74381433,-0.656627212
+7,M323A,M323A,Siena,2/29/2016,http://imgur.com/5B5NGza,75,342,410,0,0.117,0.12,1,1,1,1,,1,36.85834703,-0.701662793
+101,Y18A,Y18A,Bill,9/28/2015,http://imgur.com/VEB5R0Z,10,123,475,0,0.59,0.59,1,0.5,1,1,,1,37.17290318,-0.346462476
+82,E177A,E177A,Bill,9/22/2015,http://imgur.com/l9de7i8,23,300,500,0,1.006,1.01,1,1,1,1,,1,37.30765525,-0.486927539
+45,I300N,I300N,Bill,10/20/2015,http://imgur.com/hEHNbhf,9,240,343,1,0.204,0.41,1,1,1,1,,1,37.65337458,-0.316965376
+112,n163c,N163C,Mary,10/5/2015,http://imgur.com/FX85Fwr,45,215,309,0,0.119,0.12,1,0.5,1,1,,1,37.69860811,-0.338414894
+111,i244e,I244E,Mary,10/5/2015,http://imgur.com/lPIcyDj,25,331,391,0,0.1565,0.16,1,0.5,1,1,,1,37.79312885,-0.872060879
+50,T175R,T175R,Bill,10/20/2015,http://imgur.com/sS2seXk,3,198,628,1,0.151,0.30,1,1,1,1,,1,37.82697936,-0.487971543
+98,T352A,T352A,Bill,9/28/2015,http://imgur.com/KLfB76v,6,165,453,0,0.504,0.50,1,1,1,1,,1,38.02706561,-0.745703648
+113,n163d,N163D,Bill,10/5/2015,http://imgur.com/1CWSB4l,8,311,345,0,0.687,0.69,1,1,1,1,,1,38.25875361,-0.454263091
+6,L171A,L171A,Bill,8/3/2015,http://imgur.com/v5Ai2qt,31,300,200,0,0.495,0.50,1,1,1,1,,1,38.28835703,-0.480826702
+31,C167Q,C167Q,Bill,10/27/2015,http://imgur.com/ofjYcGK,30,202,247,1,0.264,0.53,1,1,1,1,,1,38.47156734,-0.529353681
+107,e222k,E222K,Mary,10/5/2015,http://imgur.com/XLQUIzx,13,265,315,0,0.095,0.10,1,1,1,1,,1,38.52686761,-0.464966699
+8,N220A,N220A,Natalie,11/8/2015,http://i.imgur.com/WPw2nEr.jpg,94,347,358,1,0.813,1.63,1,1,1,1,,1,38.63105708,-0.656223216
+127,N293C,N293C,Mary,8/11/2015,http://imgur.com/rwg5bN7,118,149,305,0,0.324,0.32,1,1,1,1,,0,38.66739191,-0.536787323
+96,T15A,T15A,Bill,9/28/2015,http://imgur.com/uH1FNX6,4,236,502,0,0.619,0.62,1,1,1,1,,0,38.69692256,-0.457046375
+75,E154D,E154D,Bill,9/22/2015,http://imgur.com/F5I3lam,24,300,600,0,0.969,0.97,1,1,1,1,,1,38.69910415,-0.688685683
+49,L171R,L171R,Siena ,9/22/2015,http://imgur.com/xdstJ8r,2,86,218,0,0.369,0.37,1,1,1,1,,1,38.69910415,-0.688685683
+47,S331A,S331A,Siena ,9/22/2015,http://imgur.com/oIaQoDF,20,104,242,0,0.254,0.25,1,1,1,1,,1,38.95957149,-0.454130769
+48,A195S,A192S,Siena ,9/22/2015,http://imgur.com/Mc8us52,10,87,224,0,0.321,0.32,1,1,1,1,,1,39.08260139,-0.906303743
+71,H373R,H373R,Bill,9/22/2015,http://imgur.com/76hvWe1,26,250,600,0,1.831,1.83,1,1,1,1,,1,39.08260139,-0.906303743
+79,A357A,BglB,Siena,11/30/2015,http://imgur.com/jLtrOJt,4,337,466,1,0.284,0.57,1,1,1,1,,1,39.09458089,-0.325209367
+66,W325C,W325C,Bill,9/15/2015,http://imgur.com/0W2zbEF,13,250,300,0,1.121,1.12,1,1,1,1,,1,39.18184169,-0.888861379
+72,I91E,I91E,Siena,11/9/2015,http://imgur.com/SpOWrdL,1,127,179,1,0.159,0.32,1,1,1,1,,1,39.19952473,-0.44390528
+65,V52G,V52G,Bill,9/15/2015,http://imgur.com/RaamKNK,14,250,300,0,0.917,0.92,1,1,1,1,,1,39.20629853,-1.00569276
+44,E177L,E177L,Bill,10/20/2015,http://imgur.com/qP3e9Y6,3,286,355,1,0.232,0.46,1,1,1,1,,1,39.22350318,-0.520209618
+117,r240k,R240K,Bill,10/5/2015,http://imgur.com/sZc0Ytl,1,110,667,0,0.703,0.70,1,1,1,1,,1,39.31426782,-1.423406355
+108,e222q,E222Q,Mary,10/5/2015,http://imgur.com/vbRlA8H,5,384,493,0,0.398,0.40,1,1,1,1,,1,39.42164542,-0.815421754
+138,N220R,N220R,Mary,8/11/2015,http://imgur.com/OPSaWh2,89,134,276,0,0.217,0.22,1,1,1,1,,0,39.42249484,-0.679409263
+29,S17E,S17E,Bill,10/27/2015,http://imgur.com/sJ4VZ6c,27,325,315,1,0.202,0.40,1,0.5,1,1,,1,39.42989154,-0.756365367
+41,N220H,N220H,Bill,11/8/2015,http://imgur.com/Hl9yXnJ,100,240,356,1,0.075,0.15,1,1,1,1,,1,39.45829075,-0.74027775
+64,E423S,E423S,Bill,9/15/2015,http://imgur.com/lhwyYRP,21,250,500,0,1.19,1.19,1,1,1,1,,1,39.45924017,-1.449480472
+62,M358T,M358T,Bill,9/15/2015,http://imgur.com/SpnZy7i,51,250,200,0,1.1,1.10,1,1,1,1,,1,39.4891321,-1.435990562
+118,s298e,S298E,Bill,10/5/2015,http://imgur.com/UUNJChd,2,153,314,0,0.457,0.46,1,1,1,1,,1,39.56683791,-0.949263995
+1,C167A,C167A,Bill,8/3/2015,http://imgur.com/gJGEhsm,40,,200,0,0.77,0.77,1,1,1,1,,1,39.735604,-1.3884472
+14,S400A,S400A,Siena,2/29/2016,http://imgur.com/JIuwX9e,30,294,630,0,0.236,0.24,1,1,1,1,,1,39.80689539,-0.600616124
+128,L362M,L362M,Mary,8/11/2015,http://imgur.com/1A5hRrW,89,258,317,0,0.326,0.33,1,1,1,1,,0,39.8488593,-0.613592478
+121,w325r,W325R,Bill,10/5/2015,http://imgur.com/gERKHZ9,1,106,463,0,0.354,0.35,1,1,1,1,,0,39.87379178,-0.713239858
+11,R240A,R240A,Siena,2/29/2016,http://imgur.com/rCYKhB3,60,330,517,0,0.29,0.29,1,1,1,1,,1,39.87611457,-1.044786161
+78,A356A,BglB,Bill,9/22/2015,http://imgur.com/zjxNeKd,8,300,500,0,0.738,0.74,1,1,1,1,,1,39.88826633,-1.124698439
+119,w120h,W120H,Bill,10/5/2015,http://imgur.com/iIckhtv,3,147,518,0,0.336,0.34,1,1,1,1,,1,39.88839454,-0.574203987
+83,E406A,E406A,Mary,10/5/2015,http://imgur.com/VkrBTDc,70,425,524,0,0.7575,0.76,1,1,1,1,,1,39.93431035,-1.524719042
+80,A408A,BglB,Bill,9/22/2015,http://imgur.com/NcWTJWk,11,300,500,0,1.197,1.20,1,1,1,1,,1,39.95593139,-1.260728826
+NA,WT,BglB,Mary,8/11/2015,http://imgur.com/7D19dGa,25,297,274,0,0.277,0.28,1,1,1,1,,1,39.9559314,-1.2607288
+60,K341A,K341A,Bill,9/15/2015,http://imgur.com/n9J041r,21,250,300,0,1.049,1.05,1,1,1,1,,1,39.98458912,-1.703772607
+102,Y294A,Y294A,Siena,10/26/2015,,1,239,373,1,0.677,1.35,1,1,1,1,,1,39.99976639,-0.755361468
+94,S14A,S14A,Natalie,1/31/2016,http://imgur.com/M9wjuRL,15,486,411,0,0.413,0.41,1,1,1,1,,1,40.01786873,-1.565035606
+68,H101R,H101R,Bill,9/15/2015,http://imgur.com/yrFrpbU,47,250,300,0,1.5,1.50,1,1,1,1,,1,40.02170796,-0.910847873
+97,T218A,T218A,Bill,9/28/2015,http://imgur.com/JP7XQ4h,4,164,455,0,0.88,0.88,1,1,1,1,,1,40.04565324,-1.122530834
+87,H119A,H119A,Natalie,1/31/2016,http://imgur.com/CSra5sE,3,468,426,0,0.277,0.28,1,1,1,1,,1,40.15804486,-1.028931199
+17,W325A,W325A,Siena,9/28/2015,http://imgur.com/bzDDjFW ,56,219,189,0,0.216,0.22,1,1,1,1,,1,40.1882422,-0.362362979
+28,E406D,E406D,Bill,10/27/2015,http://imgur.com/oLselJG,15,57,154,1,0.555,1.11,1,1,1,1,,1,40.55459923,-0.926168195
+92,N354A,N354A,Natalie,1/31/2016,http://imgur.com/oTFPr5i,30,458,406,0,0.306,0.31,1,0.5,1,1,,1,40.5577929,-0.335793744
+91,N163A,N163A,Natalie,1/31/2016,http://imgur.com/pL9x4DH,15,354,441,0,0.163,0.16,1,0.5,1,1,,1,40.8019296,-0.377448767
+25,W120F,W120F,Siena,2/29/2016,http://imgur.com/CvQJwLR,40,284,587,0,0.437,0.44,1,0.5,1,1,,1,41.51052689,-0.462997687
+131,N220Y,N220Y,Mary,8/11/2015,http://imgur.com/rK0pfPI,30,224,280,0,0.461,0.46,1,1,1,1,,0,41.63037405,-0.365824477
+95,S17A,S17A,Natalie,1/31/2016,http://imgur.com/rekX0s9,30,465,416,0,0.502,0.50,1,1,1,1,,1,41.64904222,-1.265545989
+57,N220G,N220G,Siena ,2/29/2016,http://imgur.com/koZ8ijJ,70,354,525,0,1.592,1.59,1,1,1,1,,0,41.8736114,-1.49476396
+93,N404A,N404A,Natalie,1/31/2016,http://imgur.com/XOVCqnq,3,515,346,0,0.532,0.53,1,1,1,1,,1,42.00579072,-0.965897327
+63,N404C,N404C,Siena,2/29/2016,http://imgur.com/qcE63NW,8,285,385,0,0.145,0.15,1,1,1,1,,0,42.5779609,-1.299898712
+81,D403A,D403A,Bill,9/22/2015,http://imgur.com/299204C,4,200,400,0,0.187,0.19,1,0.5,1,0,no expression,1,NaN,NaN
+2,E164A,E164A,Bill,11/8/2015,http://imgur.com/H7iHafM,75,224,357,1,0.194,0.39,1,1,1,0,catalytic residue,1,NaN,NaN
+104,e164g,E164G,Bill,9/28/2015,http://imgur.com/xEcvaTx,2,123,525,0,0.291,0.29,1,0,1,0,catalytic residue,0,NaN,NaN
+105,e164r,E164R,Siena,10/26/2015,,4,121,400,1,0.262,0.52,1,1,1,0,catalytic residue,0,NaN,NaN
+109,e222r,E222R,Mary,10/5/2015,http://imgur.com/ULnpT4l,10,197,340,0,0.146,0.15,1,0,1,0,no protein,1,NaN,NaN
+110,e222y,E222Y,Mary,10/5/2015,http://imgur.com/7DLCihC,5,248,365,0,0.091,0.09,1,0,1,0,no expression,1,NaN,NaN
+4,E353A,E353A,Bill,8/3/2015,http://imgur.com/ueVhrFR,50,300,200,0,0.251,0.25,1,1,1,0,catalytic residue,1,NaN,NaN
+85,F415A,F415A,Natalie,1/31/2016,http://imgur.com/8zGXAWS,20,350.4,364,0,0.31,0.31,1,1,1,0,no expression,1,NaN,NaN
+129,F415N,F415N,Siena,2/29/2016,http://imgur.com/REI5DOm,80,252,445,0,0.076,0.08,1,1,1,0,no expression,0,NaN,NaN
+53,F72H,F72H,Siena,2/29/2016,http://imgur.com/xPbkWgl,20,283,597,0,0.151,0.15,1,0,1,0,no protein,1,NaN,NaN
+86,G355A,G355A,Natalie,1/31/2016,http://imgur.com/t9cHycf,80,292,174,0,0.195,0.20,1,0,1,0,no protein ,1,NaN,NaN
+40,H119E,H119E,Bill,10/20/2015,http://imgur.com/aFWt2Bx,7,271,534,1,0.168,0.34,1,0.5,1,0,no expression,1,NaN,NaN
+56,H119N,H119N,Siena ,9/22/2015,http://imgur.com/71myLWa,25,183,286,0,0.113,0.11,1,1,1,0,below detection,1,NaN,NaN
+5,H178A,H178A,Siena,2/29/2016,http://imgur.com/W1nofuo,130,317,459,0,0.381,0.38,1,0,1,0,no expression,1,NaN,NaN
+136,H178R,H178R,Mary,8/11/2015,http://imgur.com/bzOtKL8,73,178,351,0,0.227,0.23,1,0.5,1,0,below detection,0,NaN,NaN
+134,H315E,H315E,Siena,2/29/2016,http://imgur.com/I02tuEh,40,266,554,0,0.188,0.19,1,1,1,0,below detection,0,NaN,NaN
+30,H315N,H315N,Bill,10/27/2015,http://imgur.com/afjJwSG,10,121,268,1,0.183,0.37,1,0,1,0,no protein ,1,NaN,NaN
+76,H379R,H379R,Bill,9/22/2015,http://imgur.com/JfUQmor,12,400,500,0,0.211,0.21,1,1,1,0,below detection,1,NaN,NaN
+69,H379T,H379T,Bill,9/15/2015,http://imgur.com/zHi4wOM,14,250,200,0,0.657,0.66,1,0.5,1,0,below detection,0,NaN,NaN
+51,I244N,I244N,Bill,10/20/2015,http://imgur.com/FZVmjCl,2,198,461,1,0.085,0.17,1,0,1,0,no protein,1,NaN,NaN
+90,M221A,M221A,Mary,10/5/2015,,40,333,343,0,0.123,0.12,1,0,1,0,no protein,1,NaN,NaN
+70,M261D,M261D,Bill,9/15/2015,http://imgur.com/yweFwXf,50,250,300,0,0.392,0.39,1,0,1,0,no protein,0,NaN,NaN
+21,M323K,M323K,Siena,2/29/2016,http://imgur.com/u4mLuyN,40,264,722,0,0.085,0.09,1,0,1,0,no protein ,1,NaN,NaN
+9,N293A,N293A,Siena,2/29/2016,http://imgur.com/C0U5vZg,60,327,403,0,0.419,0.42,1,1,1,0,below detection,1,NaN,NaN
+137,N293D,N293D,Mary,8/11/2015,http://imgur.com/D7ixSSi,77,209,254,0,0.194,0.19,1,1,1,0,below detection,0,NaN,NaN
+130,N293Q,N293Q,Mary,8/11/2015,http://imgur.com/pS0EWRr,36,280,361,0,0.171,0.17,1,1,1,0,below detection,0,NaN,NaN
+74,P329N,P329N,Natalie,11/8/2015,http://i.imgur.com/f2Em2Uu.jpg,40,311,505,1,0.303,0.61,1,0.5,1,0,no expression,1,NaN,NaN
+10,Q19A,Q19A,Siena,2/29/2016,http://imgur.com/GoG02mT,50,295,408,0,0.41,0.41,1,1,1,0,below detection,1,NaN,NaN
+114,q19c,Q19C,Bill,10/5/2015,http://imgur.com/MorA18r,3,95,558,0,0.479,0.48,1,1,1,0,below detection,1,NaN,NaN
+115,r240d,R240D,Siena,10/26/2015,,10,157,325,1,0.329,0.66,1,0.5,1,0,below detection,1,NaN,NaN
+116,r240e,R240E,Bill,10/5/2015,http://imgur.com/UPIFZTN,15,268,520,0,0.296,0.30,1,0,1,0,no protein,0,NaN,NaN
+12,R76A,R76A,Natalie,11/8/2015,http://i.imgur.com/tKuddaM.jpg,100,273,430,1,0.486,0.97,1,0.5,1,0,no expression,1,NaN,NaN
+13,S16A,S16A,Natalie,11/8/2015,http://i.imgur.com/HwXKOLT.jpg,80,328,422,1,0.504,1.01,1,1,1,0,below detection,1,NaN,NaN
+135,S16N,S16N,Mary,8/11/2015,http://imgur.com/lIvxQzT,75,297,361,0,0.179,0.18,1,0.5,1,0,below detection,0,NaN,NaN
+15,T296A,T296A,Siena,2/29/2016,http://imgur.com/mymVeZu,80,344,520,0,0.141,0.14,1,0,1,0,no protein ,1,NaN,NaN
+16,W120A,W120A,Siena,2/29/2016,http://imgur.com/N0fjMxw,120,345,624,0,0.133,0.13,1,0.5,1,0,below detection,1,NaN,NaN
+120,w325g,W325G,Siena,10/26/2015,,1,296,356,1,0.108,0.22,1,0,1,0,no protein,0,NaN,NaN
+58,W325H,W325H,Siena,2/29/2016,http://imgur.com/LEuoBRe,20,307,484,0,0.064,0.06,1,1,1,0,below detection,1,NaN,NaN
+32,W325L,W325L,Bill,11/8/2015,http://imgur.com/xyC6OTG,100,248,356,1,0.329,0.66,1,1,1,0,below detection,1,NaN,NaN
+18,W34A,W34A,Siena,9/28/2015,http://imgur.com/aj5BKYu,67,294,410,0,0.184,0.18,1,0.5,1,0,no expression,1,NaN,NaN
+99,W399A,W399A,Siena,10/26/2015,,6,159,246,1,0.333,0.67,1,0.5,1,0,below detction ,1,NaN,NaN
+123,w399c,W399C,Siena,11/30/2015,http://imgur.com/BSrFh4E,3,378,411,1,0.449,0.90,1,1,1,0,below detection,1,NaN,NaN
+124,w399g,W399G,Bill,11/8/2015,http://imgur.com/X8N1IBq,25,175,298,1,0.521,1.04,1,1,1,0,below detection,1,NaN,NaN
+133,W399R,W399R,Mary,8/11/2015,http://imgur.com/AdqjkcA,93,269,343,0,0.233,0.23,1,1,1,0,below detection,0,NaN,NaN
+122,w399s,W399S,Bill,10/5/2015,http://imgur.com/M509T5g,2,190,300,0,0.196,0.20,1,1,1,0,below detection,1,NaN,NaN
+100,W407A,W407A,Bill,9/28/2015,http://imgur.com/8T7yw0V,5,140,515,0,0.182,0.18,1,0.5,1,0,no expression,1,NaN,NaN
+22,W407G,W407G,Siena,9/28/2015,http://imgur.com/qM4M36j,44,288,421,0,0.276,0.28,1,0.5,1,0,no expression,1,NaN,NaN
+20,W407Q,W407Q,Natalie,11/8/2015,http://i.imgur.com/0X8b6KT.jpg,35,304,330,1,0.251,0.50,1,0,1,0,no expression,1,NaN,NaN
+23,W407R,W407R,Natalie,11/8/2015,http://i.imgur.com/uEAROyv.jpg,65,367,660,1,0.182,0.36,1,0,1,0,no expression,1,NaN,NaN
+52,Y166P,Y166P,Siena ,9/22/2015,http://imgur.com/1vfDIUx,30,146,267,0,0.264,0.26,1,0,1,0,no protein,1,NaN,NaN
+42,Y294F,Y294F,Siena,11/30/2015,http://imgur.com/VSrmcFa,150,322,479,1,0.408,0.82,1,1,1,0,below detection,1,NaN,NaN
+103,Y295A,Y295A,Bill,10/20/2015,http://imgur.com/Fg7Rdsi,2,243,418,1,0.188,0.38,1,0.5,1,0,catalytic residue,1,NaN,NaN
+126,y295g,Y295G,Bill,11/8/2015,http://imgur.com/2woB32i,35,93,399,1,0.235,0.47,1,1,1,0,catalytic residue,1,NaN,NaN
