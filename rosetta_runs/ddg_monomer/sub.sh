@@ -7,4 +7,4 @@
 
 cd out # sigh 
 MUT=$( sed -n "$SLURM_ARRAY_TASK_ID p" ../list ) 
-/share/work/rosetta/source/bin/ddg_monomer.linuxgccrelease @flags -resfile ../res/${MUT}.res
+/share/work/rosetta/source/bin/ddg_monomer.linuxgccrelease @ ../flags -resfile $MUT

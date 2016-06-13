@@ -1,4 +1,4 @@
--s bglb_apo.pdb 
+-s ../bglb_apo.pdb 
 -ddg:weight_file soft_rep_design
 -ddg:minimization_scorefunction talaris2014 
 -ddg::iterations 50 
