@@ -1,201 +1,200 @@
-0
--parser:script_vars target=192 new_res=S
--parser:script_vars target=227 new_res=W
--parser:script_vars target=236 new_res=E
--parser:script_vars target=249 new_res=E
--parser:script_vars target=356 new_res=A
--parser:script_vars target=357 new_res=A
--parser:script_vars target=408 new_res=A
--parser:script_vars target=167 new_res=A
--parser:script_vars target=167 new_res=F
--parser:script_vars target=167 new_res=Q
--parser:script_vars target=167 new_res=S
--parser:script_vars target=121 new_res=F
--parser:script_vars target=322 new_res=A
--parser:script_vars target=403 new_res=A
--parser:script_vars target=154 new_res=D
--parser:script_vars target=164 new_res=A
--parser:script_vars target=164 new_res=D
--parser:script_vars target=164 new_res=G
--parser:script_vars target=164 new_res=R
--parser:script_vars target=177 new_res=A
--parser:script_vars target=177 new_res=D
--parser:script_vars target=177 new_res=K
--parser:script_vars target=177 new_res=L
--parser:script_vars target=177 new_res=N
--parser:script_vars target=222 new_res=A
--parser:script_vars target=222 new_res=H
--parser:script_vars target=222 new_res=K
--parser:script_vars target=222 new_res=Q
--parser:script_vars target=222 new_res=R
--parser:script_vars target=222 new_res=Y
--parser:script_vars target=281 new_res=H
--parser:script_vars target=353 new_res=A
--parser:script_vars target=353 new_res=F
--parser:script_vars target=388 new_res=C
--parser:script_vars target=406 new_res=A
--parser:script_vars target=406 new_res=D
--parser:script_vars target=406 new_res=N
--parser:script_vars target=406 new_res=Q
--parser:script_vars target=406 new_res=V
--parser:script_vars target=426 new_res=S
--parser:script_vars target=248 new_res=K
--parser:script_vars target=343 new_res=S
--parser:script_vars target=405 new_res=A
--parser:script_vars target=415 new_res=A
--parser:script_vars target=415 new_res=D
--parser:script_vars target=415 new_res=N
--parser:script_vars target=72 new_res=H
--parser:script_vars target=12 new_res=N
--parser:script_vars target=153 new_res=A
--parser:script_vars target=355 new_res=A
--parser:script_vars target=101 new_res=R
--parser:script_vars target=119 new_res=A
--parser:script_vars target=119 new_res=D
--parser:script_vars target=119 new_res=E
--parser:script_vars target=119 new_res=N
--parser:script_vars target=119 new_res=S
--parser:script_vars target=178 new_res=A
--parser:script_vars target=178 new_res=C
--parser:script_vars target=178 new_res=F
--parser:script_vars target=178 new_res=K
--parser:script_vars target=178 new_res=N
--parser:script_vars target=178 new_res=R
--parser:script_vars target=315 new_res=D
--parser:script_vars target=315 new_res=E
--parser:script_vars target=315 new_res=N
--parser:script_vars target=315 new_res=R
--parser:script_vars target=373 new_res=R
--parser:script_vars target=379 new_res=R
--parser:script_vars target=379 new_res=T
--parser:script_vars target=244 new_res=E
--parser:script_vars target=244 new_res=M
--parser:script_vars target=244 new_res=N
--parser:script_vars target=244 new_res=V
--parser:script_vars target=300 new_res=N
--parser:script_vars target=91 new_res=E
--parser:script_vars target=341 new_res=A
--parser:script_vars target=413 new_res=A
--parser:script_vars target=108 new_res=N
--parser:script_vars target=171 new_res=A
--parser:script_vars target=171 new_res=D
--parser:script_vars target=171 new_res=E
--parser:script_vars target=171 new_res=M
--parser:script_vars target=171 new_res=R
--parser:script_vars target=219 new_res=A
--parser:script_vars target=219 new_res=I
--parser:script_vars target=272 new_res=N
--parser:script_vars target=362 new_res=M
--parser:script_vars target=221 new_res=A
--parser:script_vars target=261 new_res=D
--parser:script_vars target=323 new_res=A
--parser:script_vars target=323 new_res=K
--parser:script_vars target=323 new_res=T
--parser:script_vars target=358 new_res=T
--parser:script_vars target=163 new_res=A
--parser:script_vars target=163 new_res=C
--parser:script_vars target=163 new_res=D
--parser:script_vars target=163 new_res=E
--parser:script_vars target=163 new_res=K
--parser:script_vars target=163 new_res=S
--parser:script_vars target=220 new_res=A
--parser:script_vars target=220 new_res=D
--parser:script_vars target=220 new_res=E
--parser:script_vars target=220 new_res=G
--parser:script_vars target=220 new_res=H
--parser:script_vars target=220 new_res=K
--parser:script_vars target=220 new_res=Q
--parser:script_vars target=220 new_res=R
--parser:script_vars target=220 new_res=S
--parser:script_vars target=220 new_res=W
--parser:script_vars target=220 new_res=Y
--parser:script_vars target=293 new_res=A
--parser:script_vars target=293 new_res=C
--parser:script_vars target=293 new_res=D
--parser:script_vars target=293 new_res=K
--parser:script_vars target=293 new_res=Q
--parser:script_vars target=293 new_res=S
--parser:script_vars target=293 new_res=T
--parser:script_vars target=354 new_res=A
--parser:script_vars target=404 new_res=A
--parser:script_vars target=404 new_res=C
--parser:script_vars target=404 new_res=E
--parser:script_vars target=404 new_res=Q
--parser:script_vars target=404 new_res=S
--parser:script_vars target=329 new_res=N
--parser:script_vars target=124 new_res=H
--parser:script_vars target=19 new_res=A
--parser:script_vars target=19 new_res=C
--parser:script_vars target=19 new_res=N
--parser:script_vars target=19 new_res=P
--parser:script_vars target=19 new_res=S
--parser:script_vars target=313 new_res=E
--parser:script_vars target=313 new_res=R
--parser:script_vars target=240 new_res=A
--parser:script_vars target=240 new_res=D
--parser:script_vars target=240 new_res=E
--parser:script_vars target=240 new_res=K
--parser:script_vars target=359 new_res=E
--parser:script_vars target=76 new_res=A
--parser:script_vars target=76 new_res=Q
--parser:script_vars target=14 new_res=A
--parser:script_vars target=16 new_res=A
--parser:script_vars target=16 new_res=N
--parser:script_vars target=16 new_res=Q
--parser:script_vars target=16 new_res=T
--parser:script_vars target=17 new_res=A
--parser:script_vars target=17 new_res=E
--parser:script_vars target=298 new_res=E
--parser:script_vars target=32 new_res=L
--parser:script_vars target=331 new_res=A
--parser:script_vars target=400 new_res=A
--parser:script_vars target=15 new_res=A
--parser:script_vars target=175 new_res=R
--parser:script_vars target=218 new_res=A
--parser:script_vars target=296 new_res=A
--parser:script_vars target=296 new_res=C
--parser:script_vars target=296 new_res=E
--parser:script_vars target=352 new_res=A
--parser:script_vars target=147 new_res=S
--parser:script_vars target=311 new_res=A
--parser:script_vars target=311 new_res=D
--parser:script_vars target=320 new_res=Q
--parser:script_vars target=52 new_res=G
--parser:script_vars target=120 new_res=A
--parser:script_vars target=120 new_res=F
--parser:script_vars target=120 new_res=H
--parser:script_vars target=325 new_res=A
--parser:script_vars target=325 new_res=C
--parser:script_vars target=325 new_res=E
--parser:script_vars target=325 new_res=G
--parser:script_vars target=325 new_res=H
--parser:script_vars target=325 new_res=K
--parser:script_vars target=325 new_res=L
--parser:script_vars target=325 new_res=R
--parser:script_vars target=325 new_res=Y
--parser:script_vars target=34 new_res=A
--parser:script_vars target=34 new_res=R
--parser:script_vars target=399 new_res=A
--parser:script_vars target=399 new_res=C
--parser:script_vars target=399 new_res=G
--parser:script_vars target=399 new_res=H
--parser:script_vars target=399 new_res=R
--parser:script_vars target=399 new_res=S
--parser:script_vars target=407 new_res=A
--parser:script_vars target=407 new_res=G
--parser:script_vars target=407 new_res=K
--parser:script_vars target=407 new_res=Q
--parser:script_vars target=407 new_res=R
--parser:script_vars target=407 new_res=Y
--parser:script_vars target=409 new_res=A
--parser:script_vars target=409 new_res=Y
--parser:script_vars target=166 new_res=E
--parser:script_vars target=166 new_res=F
--parser:script_vars target=166 new_res=P
--parser:script_vars target=18 new_res=A
--parser:script_vars target=294 new_res=A
--parser:script_vars target=294 new_res=F
--parser:script_vars target=294 new_res=H
--parser:script_vars target=294 new_res=L
--parser:script_vars target=295 new_res=A
--parser:script_vars target=295 new_res=G
+-suffix _A192S -parser:script_vars target=192 new_res=SER
+-suffix _A227W -parser:script_vars target=227 new_res=TRP
+-suffix _A236E -parser:script_vars target=236 new_res=GLU
+-suffix _A249E -parser:script_vars target=249 new_res=GLU
+-suffix _A356A -parser:script_vars target=356 new_res=ALA
+-suffix _A357A -parser:script_vars target=357 new_res=ALA
+-suffix _A408A -parser:script_vars target=408 new_res=ALA
+-suffix _C167A -parser:script_vars target=167 new_res=ALA
+-suffix _C167F -parser:script_vars target=167 new_res=PHE
+-suffix _C167Q -parser:script_vars target=167 new_res=GLN
+-suffix _C167S -parser:script_vars target=167 new_res=SER
+-suffix _D121F -parser:script_vars target=121 new_res=PHE
+-suffix _D322A -parser:script_vars target=322 new_res=ALA
+-suffix _D403A -parser:script_vars target=403 new_res=ALA
+-suffix _E154D -parser:script_vars target=154 new_res=ASP
+-suffix _E164A -parser:script_vars target=164 new_res=ALA
+-suffix _E164D -parser:script_vars target=164 new_res=ASP
+-suffix _E164G -parser:script_vars target=164 new_res=GLY
+-suffix _E164R -parser:script_vars target=164 new_res=ARG
+-suffix _E177A -parser:script_vars target=177 new_res=ALA
+-suffix _E177D -parser:script_vars target=177 new_res=ASP
+-suffix _E177K -parser:script_vars target=177 new_res=LYS
+-suffix _E177L -parser:script_vars target=177 new_res=LEU
+-suffix _E177N -parser:script_vars target=177 new_res=ASN
+-suffix _E222A -parser:script_vars target=222 new_res=ALA
+-suffix _E222H -parser:script_vars target=222 new_res=HIS
+-suffix _E222K -parser:script_vars target=222 new_res=LYS
+-suffix _E222Q -parser:script_vars target=222 new_res=GLN
+-suffix _E222R -parser:script_vars target=222 new_res=ARG
+-suffix _E222Y -parser:script_vars target=222 new_res=TYR
+-suffix _E281H -parser:script_vars target=281 new_res=HIS
+-suffix _E353A -parser:script_vars target=353 new_res=ALA
+-suffix _E353F -parser:script_vars target=353 new_res=PHE
+-suffix _E388C -parser:script_vars target=388 new_res=CYS
+-suffix _E406A -parser:script_vars target=406 new_res=ALA
+-suffix _E406D -parser:script_vars target=406 new_res=ASP
+-suffix _E406N -parser:script_vars target=406 new_res=ASN
+-suffix _E406Q -parser:script_vars target=406 new_res=GLN
+-suffix _E406V -parser:script_vars target=406 new_res=VAL
+-suffix _E426S -parser:script_vars target=426 new_res=SER
+-suffix _F248K -parser:script_vars target=248 new_res=LYS
+-suffix _F343S -parser:script_vars target=343 new_res=SER
+-suffix _F405A -parser:script_vars target=405 new_res=ALA
+-suffix _F415A -parser:script_vars target=415 new_res=ALA
+-suffix _F415D -parser:script_vars target=415 new_res=ASP
+-suffix _F415N -parser:script_vars target=415 new_res=ASN
+-suffix _F72H -parser:script_vars target=72 new_res=HIS
+-suffix _G12N -parser:script_vars target=12 new_res=ASN
+-suffix _G153A -parser:script_vars target=153 new_res=ALA
+-suffix _G355A -parser:script_vars target=355 new_res=ALA
+-suffix _H101R -parser:script_vars target=101 new_res=ARG
+-suffix _H119A -parser:script_vars target=119 new_res=ALA
+-suffix _H119D -parser:script_vars target=119 new_res=ASP
+-suffix _H119E -parser:script_vars target=119 new_res=GLU
+-suffix _H119N -parser:script_vars target=119 new_res=ASN
+-suffix _H119S -parser:script_vars target=119 new_res=SER
+-suffix _H178A -parser:script_vars target=178 new_res=ALA
+-suffix _H178C -parser:script_vars target=178 new_res=CYS
+-suffix _H178F -parser:script_vars target=178 new_res=PHE
+-suffix _H178K -parser:script_vars target=178 new_res=LYS
+-suffix _H178N -parser:script_vars target=178 new_res=ASN
+-suffix _H178R -parser:script_vars target=178 new_res=ARG
+-suffix _H315D -parser:script_vars target=315 new_res=ASP
+-suffix _H315E -parser:script_vars target=315 new_res=GLU
+-suffix _H315N -parser:script_vars target=315 new_res=ASN
+-suffix _H315R -parser:script_vars target=315 new_res=ARG
+-suffix _H373R -parser:script_vars target=373 new_res=ARG
+-suffix _H379R -parser:script_vars target=379 new_res=ARG
+-suffix _H379T -parser:script_vars target=379 new_res=THR
+-suffix _I244E -parser:script_vars target=244 new_res=GLU
+-suffix _I244M -parser:script_vars target=244 new_res=MET
+-suffix _I244N -parser:script_vars target=244 new_res=ASN
+-suffix _I244V -parser:script_vars target=244 new_res=VAL
+-suffix _I300N -parser:script_vars target=300 new_res=ASN
+-suffix _I91E -parser:script_vars target=91 new_res=GLU
+-suffix _K341A -parser:script_vars target=341 new_res=ALA
+-suffix _K413A -parser:script_vars target=413 new_res=ALA
+-suffix _L108N -parser:script_vars target=108 new_res=ASN
+-suffix _L171A -parser:script_vars target=171 new_res=ALA
+-suffix _L171D -parser:script_vars target=171 new_res=ASP
+-suffix _L171E -parser:script_vars target=171 new_res=GLU
+-suffix _L171M -parser:script_vars target=171 new_res=MET
+-suffix _L171R -parser:script_vars target=171 new_res=ARG
+-suffix _L219A -parser:script_vars target=219 new_res=ALA
+-suffix _L219I -parser:script_vars target=219 new_res=ILE
+-suffix _L272N -parser:script_vars target=272 new_res=ASN
+-suffix _L362M -parser:script_vars target=362 new_res=MET
+-suffix _M221A -parser:script_vars target=221 new_res=ALA
+-suffix _M261D -parser:script_vars target=261 new_res=ASP
+-suffix _M323A -parser:script_vars target=323 new_res=ALA
+-suffix _M323K -parser:script_vars target=323 new_res=LYS
+-suffix _M323T -parser:script_vars target=323 new_res=THR
+-suffix _M358T -parser:script_vars target=358 new_res=THR
+-suffix _N163A -parser:script_vars target=163 new_res=ALA
+-suffix _N163C -parser:script_vars target=163 new_res=CYS
+-suffix _N163D -parser:script_vars target=163 new_res=ASP
+-suffix _N163E -parser:script_vars target=163 new_res=GLU
+-suffix _N163K -parser:script_vars target=163 new_res=LYS
+-suffix _N163S -parser:script_vars target=163 new_res=SER
+-suffix _N220A -parser:script_vars target=220 new_res=ALA
+-suffix _N220D -parser:script_vars target=220 new_res=ASP
+-suffix _N220E -parser:script_vars target=220 new_res=GLU
+-suffix _N220G -parser:script_vars target=220 new_res=GLY
+-suffix _N220H -parser:script_vars target=220 new_res=HIS
+-suffix _N220K -parser:script_vars target=220 new_res=LYS
+-suffix _N220Q -parser:script_vars target=220 new_res=GLN
+-suffix _N220R -parser:script_vars target=220 new_res=ARG
+-suffix _N220S -parser:script_vars target=220 new_res=SER
+-suffix _N220W -parser:script_vars target=220 new_res=TRP
+-suffix _N220Y -parser:script_vars target=220 new_res=TYR
+-suffix _N293A -parser:script_vars target=293 new_res=ALA
+-suffix _N293C -parser:script_vars target=293 new_res=CYS
+-suffix _N293D -parser:script_vars target=293 new_res=ASP
+-suffix _N293K -parser:script_vars target=293 new_res=LYS
+-suffix _N293Q -parser:script_vars target=293 new_res=GLN
+-suffix _N293S -parser:script_vars target=293 new_res=SER
+-suffix _N293T -parser:script_vars target=293 new_res=THR
+-suffix _N354A -parser:script_vars target=354 new_res=ALA
+-suffix _N404A -parser:script_vars target=404 new_res=ALA
+-suffix _N404C -parser:script_vars target=404 new_res=CYS
+-suffix _N404E -parser:script_vars target=404 new_res=GLU
+-suffix _N404Q -parser:script_vars target=404 new_res=GLN
+-suffix _N404S -parser:script_vars target=404 new_res=SER
+-suffix _P329N -parser:script_vars target=329 new_res=ASN
+-suffix _Q124H -parser:script_vars target=124 new_res=HIS
+-suffix _Q19A -parser:script_vars target=19 new_res=ALA
+-suffix _Q19C -parser:script_vars target=19 new_res=CYS
+-suffix _Q19N -parser:script_vars target=19 new_res=ASN
+-suffix _Q19P -parser:script_vars target=19 new_res=PRO
+-suffix _Q19S -parser:script_vars target=19 new_res=SER
+-suffix _Q313E -parser:script_vars target=313 new_res=GLU
+-suffix _Q313R -parser:script_vars target=313 new_res=ARG
+-suffix _R240A -parser:script_vars target=240 new_res=ALA
+-suffix _R240D -parser:script_vars target=240 new_res=ASP
+-suffix _R240E -parser:script_vars target=240 new_res=GLU
+-suffix _R240K -parser:script_vars target=240 new_res=LYS
+-suffix _R359E -parser:script_vars target=359 new_res=GLU
+-suffix _R76A -parser:script_vars target=76 new_res=ALA
+-suffix _R76Q -parser:script_vars target=76 new_res=GLN
+-suffix _S14A -parser:script_vars target=14 new_res=ALA
+-suffix _S16A -parser:script_vars target=16 new_res=ALA
+-suffix _S16N -parser:script_vars target=16 new_res=ASN
+-suffix _S16Q -parser:script_vars target=16 new_res=GLN
+-suffix _S16T -parser:script_vars target=16 new_res=THR
+-suffix _S17A -parser:script_vars target=17 new_res=ALA
+-suffix _S17E -parser:script_vars target=17 new_res=GLU
+-suffix _S298E -parser:script_vars target=298 new_res=GLU
+-suffix _S32L -parser:script_vars target=32 new_res=LEU
+-suffix _S331A -parser:script_vars target=331 new_res=ALA
+-suffix _S400A -parser:script_vars target=400 new_res=ALA
+-suffix _T15A -parser:script_vars target=15 new_res=ALA
+-suffix _T175R -parser:script_vars target=175 new_res=ARG
+-suffix _T218A -parser:script_vars target=218 new_res=ALA
+-suffix _T296A -parser:script_vars target=296 new_res=ALA
+-suffix _T296C -parser:script_vars target=296 new_res=CYS
+-suffix _T296E -parser:script_vars target=296 new_res=GLU
+-suffix _T352A -parser:script_vars target=352 new_res=ALA
+-suffix _V147S -parser:script_vars target=147 new_res=SER
+-suffix _V311A -parser:script_vars target=311 new_res=ALA
+-suffix _V311D -parser:script_vars target=311 new_res=ASP
+-suffix _V320Q -parser:script_vars target=320 new_res=GLN
+-suffix _V52G -parser:script_vars target=52 new_res=GLY
+-suffix _W120A -parser:script_vars target=120 new_res=ALA
+-suffix _W120F -parser:script_vars target=120 new_res=PHE
+-suffix _W120H -parser:script_vars target=120 new_res=HIS
+-suffix _W325A -parser:script_vars target=325 new_res=ALA
+-suffix _W325C -parser:script_vars target=325 new_res=CYS
+-suffix _W325E -parser:script_vars target=325 new_res=GLU
+-suffix _W325G -parser:script_vars target=325 new_res=GLY
+-suffix _W325H -parser:script_vars target=325 new_res=HIS
+-suffix _W325K -parser:script_vars target=325 new_res=LYS
+-suffix _W325L -parser:script_vars target=325 new_res=LEU
+-suffix _W325R -parser:script_vars target=325 new_res=ARG
+-suffix _W325Y -parser:script_vars target=325 new_res=TYR
+-suffix _W34A -parser:script_vars target=34 new_res=ALA
+-suffix _W34R -parser:script_vars target=34 new_res=ARG
+-suffix _W399A -parser:script_vars target=399 new_res=ALA
+-suffix _W399C -parser:script_vars target=399 new_res=CYS
+-suffix _W399G -parser:script_vars target=399 new_res=GLY
+-suffix _W399H -parser:script_vars target=399 new_res=HIS
+-suffix _W399R -parser:script_vars target=399 new_res=ARG
+-suffix _W399S -parser:script_vars target=399 new_res=SER
+-suffix _W407A -parser:script_vars target=407 new_res=ALA
+-suffix _W407G -parser:script_vars target=407 new_res=GLY
+-suffix _W407K -parser:script_vars target=407 new_res=LYS
+-suffix _W407Q -parser:script_vars target=407 new_res=GLN
+-suffix _W407R -parser:script_vars target=407 new_res=ARG
+-suffix _W407Y -parser:script_vars target=407 new_res=TYR
+-suffix _W409A -parser:script_vars target=409 new_res=ALA
+-suffix _W409Y -parser:script_vars target=409 new_res=TYR
+-suffix _Y166E -parser:script_vars target=166 new_res=GLU
+-suffix _Y166F -parser:script_vars target=166 new_res=PHE
+-suffix _Y166P -parser:script_vars target=166 new_res=PRO
+-suffix _Y18A -parser:script_vars target=18 new_res=ALA
+-suffix _Y294A -parser:script_vars target=294 new_res=ALA
+-suffix _Y294F -parser:script_vars target=294 new_res=PHE
+-suffix _Y294H -parser:script_vars target=294 new_res=HIS
+-suffix _Y294L -parser:script_vars target=294 new_res=LEU
+-suffix _Y295A -parser:script_vars target=295 new_res=ALA
+-suffix _Y295G -parser:script_vars target=295 new_res=GLY

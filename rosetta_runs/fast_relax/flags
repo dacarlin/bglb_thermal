@@ -1,3 +1,4 @@
 -s bglb_apo.pdb 
+-nstruct 1000 
 -out:path:all out 
--constrain_relax_to_start_coords 1 
+-parser:protocol protocol.xml
