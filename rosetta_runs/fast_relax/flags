@@ -1,0 +1,3 @@
+-s bglb_apo.pdb 
+-out:path:all out 
+-constrain_relax_to_start_coords 1 
