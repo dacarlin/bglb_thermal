@@ -2,7 +2,7 @@
 
 ## Author contributions (alphabetical by last name)
 
-+ Dylan Alexander Carlin [2]: molecular cloning, designed experiments, wrote software used in analysis, analyzed data, Rosetta modeling, FoldX modeling, machine learning, wrote paper
++ Dylan Alexander Carlin [2]: molecular cloning, designed experiments, wrote software used in analysis, analyzed data, modeling, machine learning, wrote paper
 + Ryan Caster [1]: characterized expression for mutants
 + Bill Chan [1]: characterized Tm for mutants, analyzed data, contributed to paper
 + Natalie Damrau [1]: characterized mutants
@@ -125,11 +125,27 @@ Triplicate aliquots of mutant proteins in assay buffer at concentrations ranging
 
 For each BglB variant, triplicate rates at 8 temperatures were normalized to the [0,1] interval and fit to the logistic equation using least squares (SciPy) to determine the parameters Tm (midpoint) and k (kurtosis).
 
-## Computational modeling and machine learning
+## Computational modeling using Rosetta and FoldX
 
-One hundred molecular models of each mutant enzyme were generated using the Rosetta Molecular Modeling Suite by Monte Carlo optimization of total system energy and the lowest 10 of total system energy were selected for feature generation. A total of 50 features were calculated for each protein model [which ones?].
+Three seperate approaches to modeling the 128 mutants were taken in this study. In the first, 100 molecular models of each mutant enzyme were generated using the Rosetta Molecular Modeling Suite by Monte Carlo optimization of total system energy using enzyme design protocols as reported in our previous work [Carlin 2016]. The lowest 10 of total system energy were selected for feature generation. A total of 50 features were calculated for each protein model. A complete list of features can be found in the supporting information.
 
-The features were used to train a SVM classifier. We assessed model performance using 10-fold cross-validation. First we performed 10-fold cross-validation (CV) and evaluated the predicted performance on the left-out samples (generalization error) at each of the 10 runs. Then we repeated this procedure 1,000 times to randomize the sample distribution among the folds. That way, we reduce the effect of any bias for evaluating left-out prediction performance. More information about the optimization and statistical procedure followed is available [Supp].
+## Machine learning
+
+### Classification problems: predicing soluble expression, and positive versus deterimental mutations
+
+Two classifers were chosen for their predicitons on the feature set. The first, an implemnetation of SVM from scikit-learn, performance was asssed via grdi search across kernals (linear, ploy, and RBF) taking care to balance the uneven class eights, and performance was evaluated precision, recall, and ROC. The predicitons for the SVM perfmance awas X and Y by these measures.
+
+THe second classifer was a RandomForest, was also trained on the same input data, and achieved accuracies of X. However, accury may not be the best metric for an ubabalance d dbata dset asucha s the one presneted here. Therefore, alternate appraoches to assigning classes were used.
+
+In the first apparoch, a two-class prediciton of detrimental versus beneficial was assess by assigning those proteins with a Tm graether than 1 C above WT to the positive class, and the proteins with a TM belowe 1 C less than wild type and those that did not express to the nagative class.
+
+IN the second approach, a three-class labeles were used to separate proteins into benedicial (Tm > 1 C above WT), neutral (-1 < Tm < 1), or detrimental (no express, or Tm < -1). IN this data set, XX proteins were used (not all 128)
+
+In the final approach, proteins were classed by whether we were able to determine tht Tm or not (a much easier problem, somewhat like convoluting all the parameters together). Since the limit of detection of the thermal stability assay is XXX, then protnes above this threshhold are represnted. It may be the case that this is the bilocalglly relevant class distribution (note class dributiaon across out data set is relativly even). ALl 128 mutants proteins were in this data set.
+
+### Regression problem: predicting subtle effects on Tm
+
+For predicitng Tm continous variable, three featre sets were used: FOldX, RosettaDesign, and and RosettaMonomer. 62 Tm sampels were used.
 
 # Results
 
@@ -186,6 +202,8 @@ In any case, our previous work sampled functional space in a way that captured a
 It is interesting to note that the protein melting temperatures and kinetic constants reported in this study were not found to be correlated. This sheds doubt on studies [Romero] that convolute these parameters into specific activity measurements, for one can never be sure the functional parameter that is tuned to result in an inactive mutant. In biotechnology, however, this finding is a boon: it means that kinetics and thermal stability, and perhaps other parameters of the functional envelope, arise from independent (if overlapping) biophysical properties, and thus can be rationally modulated independently. This neatly avoids the "two-objective optimisation problem" assumed to exist by engineers seeing to maximize two parameters (such as kcat and thermal stability) independently [http://pubs.rsc.org/en/content/articlepdf/2015/cs/c4cs00351a]. Whether this finding is relevant to BglB alone is unclear, as other studies have shown a strict linear correlation between delta-G and kcat/km for RNase [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1219248/].
 
 We are happy to see our method predict destabilizaing mutations with overt effects of protein structural stability (P325, G12P, etc.), but we are even happier to see subtle effects recapitulated in our predictions [example?]. As reported previously, we note that prediction error increases as the number of samples in a particular bin or class decreases, and thus we seek ways to more evenly sample functional space.
+
+One major advantage of large, self-consistent data sets such as the one presented here is that they do not exist in existing databases and thus provide unbiased results (from the point of view that they are not already in the training set, as would happen if FoldX was refined without publishing). As published data sets are used to refine existing software, that software accumulates a bias toward overfitting that is recapitulatted whenever a new group seeks to evaluate the predicitive ability of the software on old data sets. Therefore, it is of crucial importance to generate large, self-consistent data sets such as the one predicnted here to accuracly evaluate predicitive modeling algorithms.
 
 ## Implications of our findings to biotechnology
 
