@@ -1,4 +1,0 @@
--s bglb_apo.pdb 
--nstruct 1000 
--out:path:all out 
--parser:protocol protocol.xml
