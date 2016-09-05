@@ -1,0 +1,114 @@
+Title: 
+
+Protein expression and thermal stability measurements of 120 point mutants of a glycoside hydrolase enzyme allows evaluation of stability prediction accuracy  
+
+Authors (* contributed equally): 
+
+Bill Chan * [1]
+Siena Hapig-Ward * [1]
+Dylan Alexander Carlin [2] 
+Justin B. Siegel [1, 3, 4]
+
+Author affiliations: 
+
+1. Genome Center, University of California, Davis CA, USA
+2. Biophysics Graduate Group, University of California, Davis CA, USA 
+3. Department of Chemistry, University of California, Davis CA, USA
+4. Department of Biochemistry & Molecular Medicine, University of California, Davis CA, USA
+
+
+Abstract 
+
+...
+
+
+Introduction
+
+Prediction of the change in stability conferred by single point mutations is of critical importance in protein engineering and human health. In protein engineering, mutations are used to modulate functional parameters for tailored applications []. In human health, single point mutations randomly accrue and cause disease by attenuating enzyme function [], disrupting protein-ligand interfaces [], and destabilizing proteins [], causing misfolding, aggregation, and dysfunction. 
+	Current approaches to predicting the change caused [effect conferred?] by a mutation have acheived prediction accuracies of X [] but are still limited by three issues. 1) Small data. 2) "Fuzzy" data (ie, qualitative data [], or data that are nearly so by spanning only 2-3 orders of magnitude [], or data where independent parameters [e.g., kcat, km] are confounded into a single variable [e.g., specific activity or kcat/km). 3) [A third issue with current predictions] Insufficiently trained computational algorithms (e.g., computational algorithms trained on limited data [] or no data []). The application of experimental data to predictive algorithms has been used in crystal structure refinement [cite: PHENIX], prediction of stabilizing mutations [], and recently by our group to predict the functional effect of point mutations in a model enzyme. 
+	Here, we repeat our sucessfull predictions of kinetic constants with soluble protein expression data for 120 mutants of BglB, and protein melting temperature for 80 mutants. We use features from molecular models of the mutant enzymes to train a machine learning classifier that predicts protein soluble expression with a score of 0.85 on our training set of 100 mutants, and a score of 0.75 on our test set of 20 mutants. This serves as a model for the application of this method to protein engineering algorithms and use of genomic data for rapid intervention in neonatal ICU. 
+
+Methods
+
+Mutant selection via molecular modeling in Foldit 
+
+The crystal structure of recombinant BglB in complex with the substrate analog 2-deoxy-2-fluoro-α-D-glucopyranose was used to identify the substrate binding pocket and the catalytic residues of BglB, and a macromolecular model of BglB was created using Rosetta. Functional constraints were used to define catalytic distances, angles, and dihedrals among 4-nitrophenyl-β-D-glucoside, E164, E353, and Y295. The structure was then loaded into Foldit, a graphical user interface to Rosetta. Point mutations to the protein were modeled, and a subset were chosen by students learning about molecular modeling. Generally, the designs had energies no more than 5 Rosetta energy units higher than the native structure.
+
+Mutagenesis, expression, and purification
+
+A gene sequence coding for BglB was codon-optimized for Escherichia coli, synthesized as a DNA String by Life Technologies, and cloned into a pET29b+ vector using Gibson assembly. Kunkel mutagenesis was used to generate mutations to BglB via the Transcriptic cloud laboratory platform. Variants were expressed and purified via immobilized metal ion affinity chromatography and protein expression assessed using 4–12% gradient SDS-PAGE Bolt Gels from Life Technologies. (See supplemental information for more details.)
+
+Determination of functional denaturation temperature 
+
+Triplicate aliquots of mutant proteins in enzyme storage buffer at concentrations ranging from 0.01 to 0.3 mg/mL (10x diluted from eluate) were thermally denatured in a thermal cycler at 8 temperatures on a gradient of 30–50 C for 30 minutes prior to enzyme assay. The activity of the enzyme variants at each temperature was measured by monitoring the production of 4-nitrophenol. Mutant proteins were aliquotted in triplicate in 25 μL volumes and 75 μL of p-nitrophenyl-β-D-glucoside (100 mM in enzyme storage buffer) was added. The rate of 4-nitrophenol production was determined by linear fit to to absorbance at 420 nm measured every minute for 60 min. Rates were normalized to the [0,1] interval and fit to the logistic equation using SciPy to determine the parameters Tm and k. 
+
+Predictive modeling
+
+One hundred molecular models of each mutant enzyme were generated using the Rosetta Molecular Modeling Suite by Monte Carlo optimization of total system energy and the lowest 10 of total system energy were selected for feature generation. A total of 50 features were calculated for each protein model [which ones?]. The features were used to train a SVM classifier. We assessed model performance using 10-fold cross-validation. First we performed 10-fold cross-validation (CV) and evaluated the predicted performance on the left-out samples (generalization error) at each of the 10 runs. Then we repeated this procedure 1,000 times to randomize the sample distribution among the folds. That way, we reduce the effect of any bias for evaluating left-out prediction performance. More information about the optimization and statistical procedure followed as supplemental information. 
+
+Results
+
+Of the 120 mutants of BglB included in this study, soluble expression as measured by SDS-PAGE was evident for X mutants, and absent for X (X%). The wild type protein, BglB, had an average Tm of 39.5 C (k=-0.7) and elution concentration of X mg/mL across X replicates. 
+	Melting temperatures were obtained by activity assay for 65 mutants. Of the 120 mutants, X did not express, X have kinetic activity that is below the LOD for our assay. Observed Tm for thr 65 mutants varied from 34.7 to 42.6 C, with an average melting temperature of 39.2 C across all 65 mutants. About X percent of mutants have a Tm that is within 1 degree C of the native value, while X percent have a Tm that is lower than 1 C compared to the native sequence, and X have a Tm that is higher. 
+	Expression, melting temperature, and previously-reported [] kinetic constants for 120 mutants of BglB are presented as a heat map in Figure 2, where the values are relative to the value for the native sequence. Red indicates a quantity with a larger magnitude, and blue indicates the opposite. (Kinetic constants fot X mutants are being reported here for the first time.) 
+	
+
+Sequence-stability relationships in BglB 
+
+	The mutant conferring the largest increase in Tm was found to be N404C, which increased the Tm of BglB to 45.3 C, nearly six degrees relative to wild type. The mutation that decreased the thermal stability of BglB the most was H178A, which resulted in a decrease in Tm by 7 C.
+	A novel finding was a nearly six degree increase in melting temperature by single point mutant N404C. The BglB crystal structure reveals a weak hydrogen bond between N404 and the backbone of a L402. Molecular modeling of N404C predicts the loss of this hydrogen bond to the protein's alpha helix, in which the protein is allowed to repack into more energetically favorable states.
+	Similarly, the removal of a weak hydrogen bond in point mutation W120F results in a marked increase in melting temperature, 42.5 C. The BglB crystal structure indicates a weak hydrogen bond between W120 and the backbone of N163. The mutation to the aromatic phenylalanine maintains the structural integrity at the mutation site as well as removes the hydrogen bond to the neighboring alpha helix. The increased stability is probably attributed to improved packing in the protein's structure upon the removal of the hydrogen bond whilst preserving the general size and aromaticity at the mutation site. Previous studies have shown a similar increase in stability upon tryptophan to phenylalanine point mutations (Fulton 2003).
+	Conversely, a greater than five degree decrease in melting temperature was observed in single point mutation H178A. The BglB crystal structure displays a strong hydrogen bond between H178 and a neighboring alpha helix. Molecular modeling displays H178A loses this essential interaction in the protein structure, resulting in its readily unfolding at higher temperatures. 
+	Likewise, point mutation E222H had a melting temperature of 34.7 C, a nearly five degree decrease than that of native BglB. Previous studies show strong hydrogen bond interaction, 2.6 and 3.1 Å, between E222 and its neighboring R240 residue (Carlin 2016). The introduction of histidine at the mutation site causes the loss of these strong hydrogen bonds as well as the creation of electrostatic repulsion between the partially positively charged and positively charged amino acids. The cumulative effect of this mutation results in the protein's decreased stability at lower temperatures.
+	Of X mutants absent via SDS-PAGE, X buried hydrophobic residues are replaced with charged residues, X small residues are replaced with large residues of the same charge (X large-to-small), and 1 proline residue is introduced into an alpha helix.
+
+
+Molecular models for feature generation 
+
+We compared two strategies for feature generation. In the first, we terms in Rosetta's standard energy function (as generated by ddg_monomer) as features, and in the second, we used a set of features calculated by Rosetta's enzyme design algorithms. 
+	
+Feature selection and classification 
+
+	
+
+Discussion
+
+We were interested in selecting structural features from models of the mutant proteins that could be used to predict soluble expression and protein melting temperature. Previous work has shown accuracies of X [] and X [] using X classifiers based on X data sets. We investigated whether the data set presented here could be used to further improve the protein modeling community's ability to model functional changes in enzymes. 
+
+
+In both protein engineering and human health, mutations to stable native protein structures have quantifiable effects on protein function and stability. Single point mutations cause X cases of X disease per year (morbidity: X%). 
+
+This work provides experimental data for 120 single point mutants of BglB, including measurements of soluble expression, kinetic constants (kcat, km, kcat/km), and melting temperature. Furthermore, we contribute to a growing effort to classify the effects of mutations using machine learning. 
+
+
+Figure captions: 
+
+Figure 1: (A) BglB model (cartoon) in complex with pNPG (spheres). The residues that were mutated in this study are shown as red sticks. (B) Reaction scheme: hydrolysis of pNPG by BglB. 
+
+Figure 2: Depiction of expression, Tm, KM, kcat, kcat/KM and conservation for each of the 100 mutants used in this study. 
+	For tm, red boxes indicate a higher Tm, and blue boxes indicate a lower Tm, as labeled in the key. For expression, a black box indicates soluble expression, and a white box indicates no expression for this mutant. For kcat, KM, and kcat/km, a diverging colormap is used, with purple values indicating lower values, and green indicating higher values. 
+	The code for generating the heat map is located in the `figures.ipynb` notebook. 
+
+Figure 3: Renderings of computational models of mutants used in this study. (A) N404C, which increased Tm by X degrees. (B) W120F, which increased melting temperature [x] degrees. (C) H178X, which … degrees. (D) XXX, which … degrees. 
+
+Figure 4. Receiver operating characteristic (ROC) curves use to assess machine learning predictions based on 10-fold cross validation repeated 1000 times showing our classification accuracy. Panel A shows results based on 20 Rosetta standard energy features, panel B shows results based on 50 enzyme design features, and panel C shows performance on 10 features hand-selected and created by me. 
+
+Supplemental information
+
+1. Complete mutant table 
+2. Expanded materials and methods 
+		1. In-depth procedure 
+		2. Machine learning
+		3. Rosetta input files (code)
+3. Gel images 
+4. Diagnostic plots 
+
+References
+
+...
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+A key part of understanding how enzymes work is teasing out the complex interplay between how each residue in the protein contributes to functional parameters kcat, KM, and kcat/km, protein stability. So far, purely computational methods have failed to provide predictions suitable for predicting the effect of missense mutations on protein stability. An important part of the effort to understand enzymes must rely on the collection of experimental data in a standardized fashion such that results can be directly compared. We have previously reported a data-driven approach to predicting the functional effects of mutations in enzymes based on standardized laboratory techniques, and reported kinetic constants for 100 single point mutants of a family 1 glycoside hydrolase along with a computational model with a PCC of 0.76 for kcat/km. In order to investigate our predictive ability for another important property of enzymes, thermal denaturation temperature, we experimentally determine thermal stability for 120 single point mutations of the same enzyme. Our results shed light on the relationships between structure and thermal stability in this important class of enzymes. We also propose a method for the prediction of enzyme thermal stability using a combination of molecular modeling and machine learning. 
