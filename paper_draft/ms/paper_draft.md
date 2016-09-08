@@ -32,13 +32,13 @@ The importance of enzymes in biotechnology makes the accurate modeling of enzyme
 
 # Introduction
 
-The field of synthetic biology is awaiting more accurate predictions of the function and stability of the designed enzyme sequences sought after for their unique selectivity and speed. [long road ahead for enzyme design] The accurate modeling of enzyme thermal stability and soluble expression in heterologous hosts such as *Escherichia coli* an important goal for the protein modeling community, with many tools available for making predictions from sequence, structure, or a combination of sequence, structure, and experimental data [big recent review]. Yet, despite the importance of these goals, the prediction of the stability effect of point mutations in proteins has not been fully achieved, and neither has the prediction of the expression of sequences in heterologous hosts.  
+The field of synthetic biology awaits more accurate predictions of enzyme funtion and stability. The function and stability of the designed enzyme sequences sought after for their unique selectivity and speed. [Baker long road ahead for enzyme design] The accurate modeling of enzyme thermal stability and soluble expression in heterologous hosts such as *Escherichia coli* an important goal for the protein modeling community, with many tools available for making predictions from sequence, structure, or a combination of sequence, structure, and experimental data [big recent review]. Yet, despite the importance of these goals, the prediction of the stability effect of point mutations in proteins has not been fully achieved, and neither has the prediction of the expression of sequences in heterologous hosts.  
 
 Previous efforts to predict the stability effects of point mutations in proteins have used features derived from force-field–based molecular modeling combined with machine learning algorithms [Masso, Berliner]. However, previous approaches have faced a major challenge that cannot be dealt with computationally: the lack of large, high-quality training sets of experimental data. Current data sets that are large are constructed without regard for standardization [ProTherm], reducing the accuracy and usefulness of predictions made by these methods. A further problem is that high-quality data sets that are quantitative and large have already been used to refine protein modeling algorithms and thus in some sense have been seen by the algorithms before. Thus, the accurate modeling of stability effects of point mutations, while an important goal, remains a substantial challenge for protein stability prediction algorithms.
 
 Previous attempts to predict stability changes in proteins conferred by point mutations have not considered enzymes specifically \cite{18632749}, and have suffered by decades-old low-throughput molecular biology and biochemistry techniques. Thus, the largest data sets for which melting temperature $Tm$ is explicitly measured have been around 30 mutants [cite]. Other studies have collected large amounts of data, but it suffers from convolution of separate/othoganal [we will show that kcat and tm are not correlated] parameters/fuzzy measuremetns [cite: Romero and others]. Large data sets of thermal stabilities also exist, yet the data sets collected there were created without regard for standardization for varying experimental conditions \cite{14681373} and so suffer from a lack of comparability between measurements. Another notable limitation of computational efforts to predict the stability effects of mutations is that most have algorithms are trained on mutational data collected from multiple proteins of diverse origin [http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003592]. The result is that existing data sets either contain specific measurements for a small number of enzymes, or fuzzy measurements of large numbers of variants. This is likely due to the immense cost of generating and characterizing large numbers of variants under standardized conditions.
 
-Since to the challenges faced in experimentally characterizing large numbers of mutants, which often carries significant financial cost, are so great, computational approaches to predict the stability of enzyme mutations have in turn relied on these far from ideal data sets as training data. Previous work to develop predicitive models of enzyme function using a combination of machine-learning and compuatoional modeling have relied in protein-protein-interaction data for large number of individual proteins, with a small number of mutations each [http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003592]. Or relied on ProTherm, a database that seeks to collect data on enzyme mutations. ProTherm has the additional problem that no attempt at standardization has been made, and as a result the experimental values are on different scales for each mutation and certainly for each protein. Previous attempts to predict the effect of point mutations on antibodies (~100 residues) have used primary sequence and amino acid properties as features \cite{21710487}.
+Since to the challenges faced in experimentally characterizing large numbers of mutants, which often carries significant financial cost, are so great, computational approaches to predict the stability of enzyme mutations have in turn relied on these far from ideal data sets as training data. Previous work to develop predicitive models of enzyme function using a combination of machine-learning and features derived from force-field based computational modeling of protein structure have relied in some cases on protein-protein-interaction data for large number of individual proteins, with a small number of mutations each [PPI dataset], and in others  ProTherm, a database that seeks to collect data on enzyme mutations. ProTherm has the additional problem that no attempt at standardization has been made, and as a result the experimental values are on different scales for each mutation and certainly for each protein. Previous attempts to predict the effect of point mutations on antibodies (~100 residues) have used primary sequence and amino acid properties as features \cite{21710487}.
 
 No study, that I can find, has combined both a standardized approach to experimental characterization, and produced enough mutants to allow a sufficiently large training set to evaluate predictive ability.
 
@@ -132,7 +132,7 @@ Point mutation E222H had a melting temperature of 34.7 C, a nearly five degree d
 
 **Figure 3: Single point mutants with extreme effects on thermal stability**:  Four mutant panels are shown, sorted from left to right by delta-Tm. For each mutant, PyMOL images depict the local area of the mutation in the BglB WT protein (top) and Rosetta model of mutatation (bottom). In the bottom most panel, the assay for the mutant (black dots) is shown along with the fitted Tm (black dashed line) and the melting curve for WT BglB (green) as measured over 8 replicates in this study (the Y axis is in arbitrary units and the X axis covers the range 30-50 C).
 
-## Machine learning
+## Statistical analysis of single feature correlation for Rosetta and FoldX
 
 So, given our large data set, we have a set of questions.
 
@@ -161,15 +161,21 @@ The next question is, given that PCC values of 0.36, such as we are discovering 
 
 What would happen if we used machine learning to build predictive models of Tm using the data set as training data? Using a cross-validation procedure, we can estimate the generalization error of our predictions. In our previous work, we used an elastic net algorithm to simultaneously select features and build a predictive model for enzyme kinetic parameters. Can the same be applied here?
 
-Table 
+Table
 
 # Discussion
 
-Traditionally, [cite] studies of this type have sought to design more thermostable mutants. However, we are interested more in less thermostable mutants in the context of human disease. Since it is accepted that a number of human diseases are caused by defects in particular enzymes of metabolism, It would be interesting to investigate whether the opposite is true: whether mutations that increase turnover number or decrease dissociation constants also result in diseases. Perhaps diseases of excess are as common as diseases where a defective enzyme is to blame.
+The Rosetta Molecular Modeling Suite has been successfully used to guide the engineering of a wide range of enzyme functions. However, there has been a limited ability to benchmark its predictive power for enzyme reengineering due to the lack of a large, quantitative dataset correlating the effects of mutations to changes in kinetic parameters and protein stability. Here, we expand on a previous data set of 100 mutants and report statistical evaluation of our ability to predict the functional effects of enzyme mutations on enzyme kinetic parameters, protein expression, and thermal stability.
+
+The data set that forms the basis of this study uncovered unexpected structure-function relationships in BglB, including mutants with significant effects on thermal stability not predicted by computational modeling and having no evolutionary precedent in available databases.
+
+Traditionally, studies of this type have sought to design more thermostable mutants. However, we are interested more in less thermostable mutants in the context of human disease. Many inherited disorders of metabolism are caused by random point mutations in germline protein-coding genes. Disease results when the mutant protein lacks a key catalytic residue, or when protein misfolding or instability leads to an inactive form. Since two alleles of metabolic enzymes are simultaneously expressed, a precise quantitative measurement of the kinetic activity and protein stabilty is necessary for the predicition to have any relevance.
+
+(Since it is accepted that a number of human diseases are caused by defects in particular enzymes of metabolism (i.e. kcat too high, KM too low for proper function). It would be interesting to investigate whether the opposite is true: whether mutations that increase turnover number or decrease dissociation constants also result in diseases. Perhaps diseases of excess are as common as diseases where a defective enzyme is to blame.)
 
 In any case, our previous work sampled functional space in a way that captured almost entirely constants of lower magnitude than the natural sequence chosen as our baseline (it cannot be helped to think that if we had instead begun with a mutant of approximately half the kcat of the WT, we should have been able to see many mutations that increase the kcat). However, in the set of protein melting temperatures reported here, 25 mutants have a Tm that is greater than WT (39.6 C), while 32 have a Tm that is lower (0.78:1 ratio).
 
-The data generated here provides a landmark data set for the assessment of current algorithms for predicting protein stability and soluble expression in heterologous hosts, which will lead to the improvement of computational tools, with far-reaching applications in biotechnology and human health.
+The data generated here provides a standardized, quantitatively-comparable data set for the assessment of current algorithms for predicting protein stability and soluble expression in heterologous hosts, which will lead to the improvement of computational tools, with far-reaching applications in biotechnology and human health.
 
 The key role of enzymes in performing specific chemical transformations under conditions dictated by the process environment in biotechnology makes the effective modulation of enzyme functional envelope of great importance in biotechnology. On the other side of the functional spectrum, many human diseases are caused by single point mutations to enzymes that result in nonfunctional proteins. In this case, it would be of great benefit to use cheap, fast, and plentiful genomic information to predict the functional effects of SNPs.
 
@@ -231,8 +237,7 @@ One major reason for the development large, self-consistent data sets such as th
 }
 
 
-@article{14681373,
-  title = {{ProTherm, version 4.0: thermodynamic database for proteins and mutants.}},
+kendaloProTherm, version 4.0: thermodynamic database for proteins and mutants.}},
   date = {2004 Jan 1},
   source = {Nucleic Acids Res},
   authors = {Bava, KA and Gromiha, MM and Uedaira, H and Kitajima, K and Sarai, A},
@@ -294,4 +299,8 @@ One major reason for the development large, self-consistent data sets such as th
   pubmed_id = {12600203},
 }
 
+### References
+
 Berliner http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4170975/
+
+PPI dataset http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003592
