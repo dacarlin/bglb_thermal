@@ -26,21 +26,45 @@
 
 ## Abstract
 
-The idea that functional proteins such as enzymes trade off thermodynamic stability for functional properties is widely held in the field of protein science. Here, we report soluble protein expression in E. coli, thermal stability, and Michaelis-Menten constants kcat, KM, and kcat/KM for 128 single point mutants. We use this data set to perform statistical analyses that show no correlation (PCC=X, p=Y) between Tm and any of kcat, KM, and kcat/KM in the BglB system. The data set here not only allowed us to discover novel stabilizing mutations with a dTM of X and a dkcat of < 0.1 min-1, but to perform a general analysis of the correlation between thermal stability and kinetic constants for native BglB and 128 individual single steps in sequence-functional space immediately adjacent to the native BglB sequence, providing evidence that the idea that proteins must trade stability for function is not a general rule, and is system-specific.
+The importance of enzymes in biotechnology makes the accurate modeling of enzyme thermal stability and soluble expression in heterologous hosts such as *Escherichia coli* an important goal for the protein modeling community. Previous efforts at accurate computational prediction, often using have been partially successful, but are hampered by the lack of large data sets on which algorithms can be trained. Here, we report soluble protein expression, thermal stability (Tm), and Michaelis-Menten constants kcat and KM for 128 individually-purified variants of a family 1 glycoside hydrolase enzyme. We demonstrate the utility of this data set by training a machine learning algorithm to predict soluble protein expression and Tm from readily-calculable features. With the experimental data set and analyses carried out in this study, we discover unexpected functional effects of mutations that shed light on enzyme function, as well as provide a critical assessment of current predictive algorithms and goals for improvement.
 
 ---
 
 ## Introduction
 
+[Option 1: Human health pitch]
+
+The ability to predict the stability effects of mutations to enzymes is a major goal of the protein modeling community, with dozens of software packages available [molec_mech]. The major goal of these efforts has been to determined the stability changes induced by single point mutations, as mutations that lead to protein misfolding and misfunction cause disease in humans [molec_mech].
+
+However, accurate prediction of enzyme functional envelope from readily-calculable structural features remains an unmet challenge.
+
+[Human health pitch]
+
+[Option 2: Biotech pitch]
+
+The accurate modeling of enzyme thermal stability and soluble expression in heterologous hosts such as *Escherichia coli* an important goal for the protein modeling community, with many tools available for making predictions from sequence, structure, or a combination of sequence, structure, and experimental data [molec_mech]. Yet, despite the importance of these goals, the prediction of the stability effect of point mutations in proteins has not been fully achieved, and neither has the prediction of the expression of sequences in heterologous hosts.  
+
+[End biotech pitch]
+
+[Option 3: function-stability tradeoff pitch]
+
 The idea that functional proteins, such as enzymes, must trade stability in order to carry out their functions is widely believed to be a general principle of enzymatic catalysis [Beadle, Tokuriki, RNase paper]. In particular, enzyme active sites, such as the one in BglB, often position charged residues in close proximity in order to present optimal geometry for catalysis. [Fersht] In an enzyme active site such as those found in family 1 glycoside hydrolases, two glutamate residues, one functioning as a nucleophile and the other as an acid/base in a classical Kosland double-displacement mechanism, are positioned at 5.5 A.
+
+In order to test this hypothesis, we designed 128 point mutants of BglB and individually characterized the soluble protein expression, thermal stability, Kcat, KM, and kcat/KM of each mutant. We present this data set, along with our analysis, here.
 
 [Beadle] Structural Bases of Stability–function Tradeoffs in Enzymes
 [Tokuriki] How Protein Stability and New Functions Trade Off
 [RNase paper]
 
-In order to test the hypothesis that the BglB sequence is a trade off between function and thermal stability, we designed 128 point mutants of BglB and individually characterized the soluble protein expression, thermal stability, Kcat, KM, and kcat/KM of each mutant. In this study, we present this data set along with our analysis.
+Dozens of software packages are available for prediting the stability effects of mutations [molec_mech]. Some use features derived from evolutionary information and sequence alone [SIFT], while some incorporate structural information [PolyPhen, AUTO-MUTE, PopMuSiC]. Some, like FoldX, use force-field–based molecular modeling combined with a statistical potential that has been trained on experimental data for point mutations [FoldX]. Other previous work has incorporated machine learning algorithms [Masso, Berliner], using the metrics generated by the various software packages as features. None, however, has been independently evaluated using an independent, curated training set.  
 
-We use this data set to perform statistical analyses that show no correlation (PCC=X, p=Y) between Tm and any of kcat, KM, and kcat/KM in the BglB system. The data set here not only allowed us to discover novel stabilizing mutations with a dTM of X and a dkcat of < 0.1 min-1, but to perform a general analysis of the correlation between thermal stability and kinetic constants for native BglB and 128 individual single steps in sequence-functional space immediately adjacent to the native BglB sequence, providing evidence that the idea that proteins must trade stability for function is not a general rule, and is system-specific.
+Data sets that have been used to train the software packages above have three primary weaknesses. Some are large are constructed without regard for standardization [ProTherm], reducing the quantitative accuracy and usefulness of predictions made by these methods. The largest data sets for which melting temperature $Tm$ is explicitly measured have been around 30 mutants [cite]. Other studies have collected large amounts of data, but it suffers from convolution of separate/othoganal [we will show that kcat and tm are not correlated] parameters/fuzzy measuremetns [cite: Romero and others]. The result is that existing data sets either contain specific measurements for a small number of enzymes, or fuzzy measurements of large numbers of variants. This is likely due to the immense cost of generating and characterizing large numbers of variants under standardized conditions.
+
+A further problem is that high-quality data sets that are quantitative and large have already been used to refine protein modeling algorithms and thus in some sense have been seen by the algorithms before. Thus, the accurate modeling of stability effects of point mutations, while an important goal, remains a substantial challenge for protein stability prediction algorithms.
+
+No study has yet combined both a standardized approach to experimental characterization, and produced enough mutants to allow a sufficiently large training set to evaluate predictive ability. We have previously reported on a data set containing of Michaelis-Menten constants kcat, KM, and kcat/KM for 100 mutants of a glycoside hydrolase. Using a constrained statistical learning technique (elastic net), we evaluated 50 structural features derived from modeling using RosettaDesign [Carlin]. Building on our previous work, we have experimentally determined kinetic constants for a further 28 mutants, as well as soluble protein expression and thermal stability for the entire data set of 128 mutants.
+
+Here, we show that this data set can be used as training data to evaluate the utility of computational features generated by protein modeling software Rosetta and FoldX in predicting the soluble expression of the 128 mutants in our data set. We then show the use of the experimental data to build a predictive model of soluble enzyme expression and melting temperature using machine learning algorithms. We show that, while models for predicting melting temperature require larger data sets to become feasible, we are able to apply our model to a blind test set of 10 mutants, on which we achieved a predictive accuracy of X percent, representing a significant improvement of force-field based approaches alone and a path forward for the field.
 
 ![](figure_1.png)
 
@@ -100,7 +124,7 @@ In agreement with previous studies, mutants that did not express followed rules 
 
 It is interesting to note that all the mutations we made in our study to the catalyic nucelophile (E353) and acid-base (E164) polar residues resulted in soluble protein, consistent with the idea that enzymes must trade structural stability for function in placing these two negatively-charged groups less than 5 Å apart (the sole exception, E164G, could be the result of an altered folding trajectory due to the conformational freedom of glycine). Notable is that all the catalytic knockouts, E164A, E164R, E353A, Y295A, Y295G, except for E164G, where a glycine is inserted in an alpha helix, result in protein that is solubly expressed in our system, supporting the belief that BglB must compromise structural stability to perform its function.
 
-A novel finding was a nearly three-degree increase in melting temperature by single point mutant N404C. The BglB crystal structure reveals a weak hydrogen bond between N404 and the backbone at L402. Molecular modeling of N404C predicts the loss of this hydrogen bond to the protein's alpha helix, in which the protein is allowed to repack into more energetically favorable states.
+A novel finding was a nearly six degree increase in melting temperature by single point mutant N404C. The BglB crystal structure reveals a weak hydrogen bond between N404 and the backbone at L402. Molecular modeling of N404C predicts the loss of this hydrogen bond to the protein's alpha helix, in which the protein is allowed to repack into more energetically favorable states.
 
 Similarly, the point mutation W120F resulted in a delta Tm of +1.6 C. The BglB crystal structure indicates a weak hydrogen bond between W120 and the backbone of N163, which could be construed as an unsatisfied polar interaction. The mutation to Phe maintains the structural integrity at the mutation site as well as removes the unsatisfied hydrogen bond donor to the neighboring alpha helix. The increased stability is then due to destabilization of the unfolded state, which exposes a hydrophobic Phe to bulk solvent. It is also worth noting that the mutant W120A results in no soluble protein production after 3 independent attempts, indicating that W120 plays a key role in stabilizing the protein. Previous studies have shown a similar increase in stability upon W to Y point mutations [Fulton]. Analysis of a multiple sequence alignment of 1,554 proteins from the Pfam database reveals approximately equal probability of finding Trp, Phe, or Tyr here, and less than 1% representation of all of the other amino acids combined. Thus, the experimental measurements and the evolutionary record agree that W120 plays a key role in stabilizing BglB. No major structural changes are predicted via Rosetta modeling.  
 
@@ -112,27 +136,54 @@ Point mutation E222H had a melting temperature of 34.7 C, a nearly five degree d
 
 **Figure 3: Single point mutants with extreme effects on thermal stability**:  Four mutant panels are shown, sorted from left to right by delta-Tm. For each mutant, PyMOL images depict the local area of the mutation in the BglB WT protein (top) and Rosetta model of mutatation (bottom). In the bottom most panel, the assay for the mutant (black dots) is shown along with the fitted Tm (black dashed line) and the melting curve for WT BglB (green) as measured over 8 replicates in this study (the Y axis is in arbitrary units and the X axis covers the range 30-50 C).
 
-## Relationship between Tm and kcat, KM, and kcat/KM
+## Statistical analysis of single feature correlation for Rosetta and FoldX
 
-Contrary to initial assumptions, Tm and kcat, KM, and kcat/KM were not found to be correlated (R=, p= for each).
+So, given our large data set, we have a set of questions.
 
-![](figure_4.png)
+The first question is, how good are Rosetta and FoldX are at predicting Tm? To answer this question, we modeled each of 128 mutations using accepted, validated computational protocols. We then asked, for each feature and for each data set, what is the correlation between the experimental Tm and the computational feature (as assessed by Pearson correlation coefficient).
 
-**Figure 4: statistical independence of protein melting temperature (Tm) and kinetic constants.** Plots of Tm versus kinetic constant for each of kcat, KM, and kcat/km. Tm values are on a linear scale (C) and kinetic constant values are on a log scale.
+[See Jupter notebook]
+
+**Table 1. Correlation between Tm and structural features generated by RosettaDesign, Rosetta ddG, Rosetta FastRelax, and FoldX PSSM.** Each correlation is given as the Pearson Correlation coefficient.  
+
+[See Jupter notebook]
+
+**Figure X. Scatter plots depicting the relationship between Tm and each of structural features generated by RosettaDesign, Rosetta ddG, Rosetta FastRelax, and FoldX PSSM.** The experimental Tm is on the Y axis and the calculated structural feature is on the X axis.   
+
+After performing this statistical analysis in the provided Jupyter notebook, I found that the best correlation between Tm and the features in our data set had a PCC of 0.3, a value that falls far short of our goal of accurate prediction of Tm for this data set. The results are summarized in a table below.
+
+| Feature set | Number of features | Most-correlated feature to T<sub>m</sub> | PCC |
+| ----------- | ------------------ | ---------------------------- |
+| RosettaDesign | 60 | SR_2_pstat_pm | 0.31 |
+| Rosetta ddG | 15 | hbond_bb_sc | 0.36 |
+| Rosetta FastRelax | 20 | omega | 0.20 |
+| FoldX | 23 | Backbone Hbond | 0.35 |
+
+**Table 2: Summary of single feature correlations with protein melting temperature.** The best-correlated feature (as assessed by PCC) from each of 4 feature sets used to predict protein melting temperature.
+
+The next question is, given that PCC values of 0.36, such as we are discovering to be the case in our data set, are not considered predictive, we think that neither Rosetta nor FoldX alone is sufficient.
+
+## Machine learning discovers informative features correlated with Tm
+
+What would happen if we used machine learning to build predictive models of Tm using the data set as training data? Using a cross-validation procedure, we can estimate the generalization error of our predictions. In our previous work, we used an elastic net algorithm to simultaneously select features and build a predictive model for enzyme kinetic parameters. Can the same be applied here?
 
 # Discussion
 
-The idea that functional proteins, such as enzymes, must trade stability in order to carry out their functions is widely believed to be a general principle of enzymatic catalysis [Beadle, Tokuriki, RNase paper]. In particular, enzyme active sites, such as the one in BglB, often position charged residues in close proximity in order to present optimal geometry for catalysis. [Fersht] In an enzyme active site such as those found in family 1 glycoside hydrolases, two glutamate residues, one functioning as a nucleophile and the other as an acid/base in a classical Kosland double-displacement mechanism, are positioned at 5.5 A.
-
-The key role of enzymes in performing specific chemical transformations under conditions dictated by the process environment in biotechnology makes the effective modulation of enzyme functional envelope of great importance in biotechnology. On the other side of the functional spectrum, many human diseases are caused by single point mutations to enzymes that result in nonfunctional proteins. In this case, it would be of great benefit to use cheap, fast, and plentiful genomic information to predict the functional effects of SNPs.
-
-Together, the importance of enzymes in biotechnology and human disease make the accurate modeling of enzyme stability an important goal of the protein modeling community. Accurate prediction of a point mutation's effect on enzyme stability would unlock rational protein engineering approaches, where the information could be used immediately to rationally engineer an enzyme's functional envelope for a desired situation as has been previously explored \cite{22575958}. Furthermore, understanding the changes in enzyme stability that occur upon point mutations would provide huge insight into understanding inherited diseases of metabolism [cite], cancer [cite], as well as mechanisms by which bacteria become resistant to antibiotics, which is lately a public health menace [cite].
+The Rosetta Molecular Modeling Suite has been successfully used to guide the engineering of a wide range of enzyme functions. However, there has been a limited ability to benchmark its predictive power for enzyme reengineering due to the lack of a large, quantitative dataset correlating the effects of mutations to changes in kinetic parameters and protein stability. Here, we expand on a previous data set of 100 mutants and report statistical evaluation of our ability to predict the functional effects of enzyme mutations on enzyme kinetic parameters, protein expression, and thermal stability.
 
 The data set that forms the basis of this study uncovered unexpected structure-function relationships in BglB, including mutants with significant effects on thermal stability not predicted by computational modeling and having no evolutionary precedent in available databases.
 
 Traditionally, studies of this type have sought to design more thermostable mutants. However, we are interested more in less thermostable mutants in the context of human disease. Many inherited disorders of metabolism are caused by random point mutations in germline protein-coding genes. Disease results when the mutant protein lacks a key catalytic residue, or when protein misfolding or instability leads to an inactive form. Since two alleles of metabolic enzymes are simultaneously expressed, a precise quantitative measurement of the kinetic activity and protein stabilty is necessary for the predicition to have any relevance.
 
+![](figure_4.png)
+
+**Figure 4: statistical independence of protein melting temperature (Tm) and kinetic constants.** Plots of Tm versus kinetic constant for each of kcat, KM, and kcat/km. Tm values are on a linear scale (C) and kinetic constant values are on a log scale.
+
 The finding that protein melting temperatures and kinetic constants reported in this study were not found to be correlated. This sheds doubt on studies [Romero] that convolute these parameters into specific activity measurements, for one can never be sure the functional parameter that is tuned to result in an inactive mutant. In biotechnology, however, this finding is a boon: it means that kinetics and thermal stability, and perhaps other parameters of the functional envelope, arise from independent (if overlapping) biophysical properties, and thus can be rationally modulated independently. This neatly avoids the "two-objective optimisation problem" assumed to exist by engineers seeing to maximize two parameters (such as kcat and thermal stability) independently [http://pubs.rsc.org/en/content/articlepdf/2015/cs/c4cs00351a]. Whether this finding is relevant to BglB alone is unclear, as other studies have shown a strict linear correlation between delta-G and kcat/km for RNase [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1219248/]. However, it will be impossible to know without large data sets such as the one preseneted here.
+
+One major reason for the development large, self-consistent data sets such as the one presented here is that they do not exist in existing databases and thus provide unbiased results. From the point of view that they are not already in the training set, as would happen if FoldX or Rosetta scoring functions are updated without publication, which often happens. As published data sets are used to refine existing software, that software accumulates a bias toward overfitting that is recapitulated whenever a new group seeks to evaluate the predictive ability of the software on old data sets. Therefore, it is of crucial importance to generate large, self-consistent data sets such as the one presented here to accurately evaluate predictive modeling algorithms.
+
+Since to the challenges faced in experimentally characterizing large numbers of mutants, which often carries significant financial cost, are so great, computational approaches to predict the stability of enzyme mutations have in turn relied on these far from ideal data sets as training data. Previous work to develop predictive models of enzyme function using a combination of machine-learning and features derived from force-field based computational modeling of protein structure have relied in some cases on protein-protein-interaction data for large number of individual proteins, with a small number of mutations each [PPI dataset], and in others  ProTherm, a database that seeks to collect data on enzyme mutations. ProTherm has the additional problem that no attempt at standardization has been made, and as a result the experimental values are on different scales for each mutation and certainly for each protein. Previous attempts to predict the effect of point mutations on antibodies (~100 residues) have used primary sequence and amino acid properties as features \cite{21710487}.
 
 ---
 
@@ -143,6 +194,8 @@ The finding that protein melting temperatures and kinetic constants reported in 
   1. Plot of protein melting for each mutant for which Tm is reported (ZIP file containing images)
   1. Images of gel band for each protein used in this study (ZIP file or single TIFF image)
   1. Additional information about experimental procedures (text)
+  1. Additional information about machine learning (text)
+  1. Rosetta and FoldX input files (ZIP containing text files)
 
 ---
 
@@ -157,3 +210,15 @@ The finding that protein melting temperatures and kinetic constants reported in 
 [PPI dataset] http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003592
 
 [molec_mech] Molecular mechanisms of disease-causing mutations JBC
+
+## Extra stuff (crap)
+
+(Since it is accepted that a number of human diseases are caused by defects in particular enzymes of metabolism (i.e. kcat too high, KM too low for proper function). It would be interesting to investigate whether the opposite is true: whether mutations that increase turnover number or decrease dissociation constants also result in diseases. Perhaps diseases of excess are as common as diseases where a defective enzyme is to blame.)
+
+In any case, our previous work sampled functional space in a way that captured almost entirely constants of lower magnitude than the natural sequence chosen as our baseline (it cannot be helped to think that if we had instead begun with a mutant of approximately half the kcat of the WT, we should have been able to see many mutations that increase the kcat). However, in the set of protein melting temperatures reported here, 25 mutants have a Tm that is greater than WT (39.6 C), while 32 have a Tm that is lower (0.78:1 ratio).
+
+The data generated here provides a standardized, quantitatively-comparable data set for the assessment of current algorithms for predicting protein stability and soluble expression in heterologous hosts, which will lead to the improvement of computational tools, with far-reaching applications in biotechnology and human health.
+
+The key role of enzymes in performing specific chemical transformations under conditions dictated by the process environment in biotechnology makes the effective modulation of enzyme functional envelope of great importance in biotechnology. On the other side of the functional spectrum, many human diseases are caused by single point mutations to enzymes that result in nonfunctional proteins. In this case, it would be of great benefit to use cheap, fast, and plentiful genomic information to predict the functional effects of SNPs.
+
+Together, the importance of enzymes in biotechnology and human disease make the accurate modeling of enzyme stability an important goal of the protein modeling community. Accurate prediction of a point mutation's effect on enzyme stability would unlock rational protein engineering approaches, where the information could be used immediately to rationally engineer an enzyme's functional envelope for a desired situation as has been previously explored \cite{22575958}. Furthermore, understanding the changes in enzyme stability that occur upon point mutations would provide huge insight into understanding inherited diseases of metabolism [cite], cancer [cite], as well as mechanisms by which bacteria become resistant to antibiotics, which is lately a public health menace [cite].
