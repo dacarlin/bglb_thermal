@@ -1,4 +1,4 @@
-# Experimental measurements of protein expression, thermal stability, and enzyme kinetic constants for 128 mutants of a glycoside hydrolase enable discovery of structural features correlated to protein stability
+# Experimental measurements of protein expression, thermal stability, and enzyme kinetic constants for 128 mutants of a glycoside hydrolase enable evaluation of function-stabilitity tradeoffs
 
 ## Author contributions (alphabetical by last name)
 
@@ -18,27 +18,21 @@
 3. Department of Chemistry, University of California, Davis CA, USA
 4. Department of Biochemistry & Molecular Medicine, University of California, Davis CA, USA
 
-**Subject areas**: biophysics, computational biology, protein engineering
-
-**Keywords**: enzyme, Rosetta, thermal stability, machine learning
+**Subject areas**: biophysics, computational biology, enzymology
 
 ---
 
 ## Abstract
 
-The idea that functional proteins such as enzymes trade off thermodynamic stability for functional properties is widely held in the field of protein science. Here, we report soluble protein expression in E. coli, thermal stability, and Michaelis-Menten constants kcat, KM, and kcat/KM for 128 single point mutants. We use this data set to perform statistical analyses that show no correlation (PCC=X, p=Y) between Tm and any of kcat, KM, and kcat/KM in the BglB system. The data set here not only allowed us to discover novel stabilizing mutations with a dTM of X and a dkcat of < 0.1 min-1, but to perform a general analysis of the correlation between thermal stability and kinetic constants for native BglB and 128 individual single steps in sequence-functional space immediately adjacent to the native BglB sequence, providing evidence that the idea that proteins must trade stability for function is not a general rule, and is system-specific.
+The idea that functional proteins such as enzymes trade off thermodynamic stability for functional properties is widely held in the field of protein science. Here, we report soluble protein expression in E. coli, thermal stability, and Michaelis-Menten constants kcat, KM, and kcat/KM for 128 single point mutants. We use this data set to perform statistical analyses that show no correlation (PCC=X, p=Y) between Tm and any of kcat, KM, and kcat/KM in the BglB system. The data set here not only allowed us to discover novel stabilizing mutations with a dTM of X and a dkcat of < 0.1 min-1, but to perform a general analysis of the correlation between thermal stability and kinetic constants for native BglB and 128 individual single steps in sequence-functional space immediately adjacent to the native BglB sequence, providing evidence that the idea that proteins must trade stability for function is not a general rule, and is in fact system-specific.
 
 ---
 
 ## Introduction
 
-The idea that functional proteins, such as enzymes, must trade stability in order to carry out their functions is widely believed to be a general principle of enzymatic catalysis [Beadle, Tokuriki, RNase paper]. In particular, enzyme active sites, such as the one in BglB, often position charged residues in close proximity in order to present optimal geometry for catalysis. [Fersht] In an enzyme active site such as those found in family 1 glycoside hydrolases, two glutamate residues, one functioning as a nucleophile and the other as an acid/base in a classical Kosland double-displacement mechanism, are positioned at 5.5 A.
+The idea that functional proteins such as enzymes must trade thermodynamic stability for functional properties such as pre-ordered active sites in order to carry out their functions is widely believed to be a general principle of enzymatic catalysis [Beadle, Tokuriki, RNase paper]. A common argument, in particular, explains that enzyme active sites, such as the one in family 1 glycoside hydrolases, often position charged residues in close proximity than might be warranted thermodynamicly in order to present optimal, pre-ordered geometry for catalysis. [Fersht] In family 1 glycoside hydrolases, two glutamate residues, one functioning as a nucleophile and the other as an acid/base in a classical Kosland double-displacement mechanism, are positioned at 5.5 A.
 
-[Beadle] Structural Bases of Stability–function Tradeoffs in Enzymes
-[Tokuriki] How Protein Stability and New Functions Trade Off
-[RNase paper]
-
-In order to test the hypothesis that the BglB sequence is a trade off between function and thermal stability, we designed 128 point mutants of BglB and individually characterized the soluble protein expression, thermal stability, Kcat, KM, and kcat/KM of each mutant. In this study, we present this data set along with our analysis.
+In order to test the hypothesis that individual residue identities in the BglB sequence are a trade off between function and thermal stability, we designed 128 point mutants of BglB and individually characterized the soluble protein expression, thermal stability, Kcat, KM, and kcat/KM of each mutant. In this study, we present this data set along with our analysis.
 
 We use this data set to perform statistical analyses that show no correlation (PCC=X, p=Y) between Tm and any of kcat, KM, and kcat/KM in the BglB system. The data set here not only allowed us to discover novel stabilizing mutations with a dTM of X and a dkcat of < 0.1 min-1, but to perform a general analysis of the correlation between thermal stability and kinetic constants for native BglB and 128 individual single steps in sequence-functional space immediately adjacent to the native BglB sequence, providing evidence that the idea that proteins must trade stability for function is not a general rule, and is system-specific.
 
@@ -66,19 +60,7 @@ His-tagged BglB proteins were purified via immobilized metal ion affinity chroma
 
 For thermal stability assays, triplicate aliquots of freshly-purified proteins in enzyme storage buffer at concentrations ranging from 0.01 to 0.1 mg/mL were incubated at 8 temperatures in 2.5 C increments between 30 C and 50 C in a thermal cycler (BioRad). After 30 minutes, proteins were transferred to assay plates containing 100 mM pNPG in enzyme storage buffer. The rate of pNP production was monitored over 60 minutes and a linear fit to the data was determined by Gen5 software.
 
-For each BglB variant, triplicate rates at 8 temperatures were normalized to the [0,1] interval and fit to the logistic equation `1/(1+exp(-k*(x-x0)))` using least squares (accessed via SciPy's `curve_fit`) to determine the parameters Tm (midpoint) and k (kurtosis) and one-standard-deviation errors from fitted values.
-
-Michaelis-Menten parameters for each mutant were determined as described previously [Carlin]. Mutants for whom Michaelis-Menten parameters were previously reported use values from the publication.
-
-## Computational modeling and feature generation using Rosetta and FoldX
-
-Three separate approaches to modeling the 128 mutants were taken in this study. In the first, 100 molecular models of each mutant enzyme were generated using the Rosetta Molecular Modeling Suite by Monte Carlo optimization of total system energy using enzyme design protocols as reported in our previous work [Carlin]. The lowest 10 of total system energy were selected for feature generation and a total of 50 features were calculated for each protein model. In a second approach, mutants were generated and scored using benchmarked [Kellogg] Rosetta ddG application, which generates 50 models and averages the best 3 models to provide a feature set of 13 features. In a third approach, models were generated and scored using FoldX PSSM application, which generates a feature set of 13 features per model. The lowest energy model was selected for feature generation.
-
-### Machine learning methods
-
-Elastic net for Tm
-
-Random forests for expression
+For each BglB variant, triplicate rates at 8 temperatures were normalized to the [0,1] interval and fit to the logistic equation `1/(1+exp(-k*(x-x0)))` using least squares (accessed via SciPy's `curve_fit`) to determine the parameters Tm (midpoint) and k (kurtosis) and one-standard-deviation errors from fitted values. Michaelis-Menten parameters for each mutant were determined as described previously [Carlin]. Mutants for whom Michaelis-Menten parameters were previously reported use values from the referenced publication.
 
 # Results
 
@@ -98,13 +80,13 @@ In addition to expression and thermal stability data, we also report kinetic con
 
 In agreement with previous studies, mutants that did not express followed rules broadly consistent with previous work and sequence conservation, such as the large destabilizing effect of any substitution at W407. Other mutants that did not express mostly followed well-established observations of destabilizing effects, such as the introduction of proline into an alpha helix (Y166P, Q19P), the mutation of topology-defining/helix-ending proline residues (P329N), mutations to and from glycine (), the introduction of charged residues into the hydrophobic core (A236E, F72H), and extreme small-to-large mutations (A227W).
 
-It is interesting to note that all the mutations we made in our study to the catalyic nucelophile (E353) and acid-base (E164) polar residues resulted in soluble protein, consistent with the idea that enzymes must trade structural stability for function in placing these two negatively-charged groups less than 5 Å apart (the sole exception, E164G, could be the result of an altered folding trajectory due to the conformational freedom of glycine). Notable is that all the catalytic knockouts, E164A, E164R, E353A, Y295A, Y295G, except for E164G, where a glycine is inserted in an alpha helix, result in protein that is solubly expressed in our system, supporting the belief that BglB must compromise structural stability to perform its function.
+It is interesting to note that all the mutations we made in our study to the catalytic nucleophile (E353) and acid-base (E164) polar residues resulted in soluble protein, consistent with the idea that enzymes must trade structural stability for function in placing these two negatively-charged groups less than 5 Å apart (the sole exception, E164G, could be the result of an altered folding trajectory due to the conformational freedom of glycine). Notable is that all the catalytic knockouts, E164A, E164R, E353A, Y295A, Y295G, except for E164G, where a glycine is inserted in an alpha helix, result in protein that is solubly expressed in our system, supporting the belief that BglB must compromise structural stability to perform its function.
 
 A novel finding was a nearly three-degree increase in melting temperature by single point mutant N404C. The BglB crystal structure reveals a weak hydrogen bond between N404 and the backbone at L402. Molecular modeling of N404C predicts the loss of this hydrogen bond to the protein's alpha helix, in which the protein is allowed to repack into more energetically favorable states.
 
 Similarly, the point mutation W120F resulted in a delta Tm of +1.6 C. The BglB crystal structure indicates a weak hydrogen bond between W120 and the backbone of N163, which could be construed as an unsatisfied polar interaction. The mutation to Phe maintains the structural integrity at the mutation site as well as removes the unsatisfied hydrogen bond donor to the neighboring alpha helix. The increased stability is then due to destabilization of the unfolded state, which exposes a hydrophobic Phe to bulk solvent. It is also worth noting that the mutant W120A results in no soluble protein production after 3 independent attempts, indicating that W120 plays a key role in stabilizing the protein. Previous studies have shown a similar increase in stability upon W to Y point mutations [Fulton]. Analysis of a multiple sequence alignment of 1,554 proteins from the Pfam database reveals approximately equal probability of finding Trp, Phe, or Tyr here, and less than 1% representation of all of the other amino acids combined. Thus, the experimental measurements and the evolutionary record agree that W120 plays a key role in stabilizing BglB. No major structural changes are predicted via Rosetta modeling.  
 
-Additionally, we have additional information about R240. The mutation R240E, which plates a glutamate near the existing glumatate at E222 that forms two hydrogen bonds to R240, placing two negativly-charged residues in close proximity, results in no soluble protein under our experimental conditions after at least 2 repeated attempts to produce and purify the protein, providing evidence for the belief that the mutation R240E is destabilizing. Whereas Rosetta modeling predicts no change in deltaG (within 1 REU) for this mutation, and example of a mutation that would have been missed using Rosetta. However, FoldX assigns a ddG of 3.78, highlighting the importance of a diverse set of estimates chosen by machine learning on experimental data to train algorithms. (Mutation R240D, which places a carboxylate only 1.54 A further away, results in a soluble protein.)
+Additionally, we have additional information about R240. The mutation R240E, which plates a glutamate near the existing glumatate at E222 that forms two hydrogen bonds to R240, placing two negatively-charged residues in close proximity, results in no soluble protein under our experimental conditions after at least 2 repeated attempts to produce and purify the protein, providing evidence for the belief that the mutation R240E is destabilizing. Whereas Rosetta modeling predicts no change in deltaG (within 1 REU) for this mutation, and example of a mutation that would have been missed using Rosetta. However, FoldX assigns a ddG of 3.78, highlighting the importance of a diverse set of estimates chosen by machine learning on experimental data to train algorithms. (Mutation R240D, which places a carboxylate only 1.54 A further away, results in a soluble protein.)
 
 Point mutation E222H had a melting temperature of 34.7 C, a nearly five degree decrease than that of native BglB. Previous studies show strong hydrogen bond interaction, 2.6 and 3.1 Å, between E222 and its neighboring R240 residue [cite]. The introduction of histidine at the mutation site causes the loss of these strong hydrogen bonds as well as the creation of electrostatic repulsion between the partially positively charged and positively charged amino acids. The cumulative effect of this mutation results in the protein's decreased stability at lower temperatures.
 
@@ -114,7 +96,7 @@ Point mutation E222H had a melting temperature of 34.7 C, a nearly five degree d
 
 ## Relationship between Tm and kcat, KM, and kcat/KM
 
-Contrary to initial assumptions, Tm and kcat, KM, and kcat/KM were not found to be correlated (R=, p= for each).
+Contrary to initial assumptions, Tm and kcat, KM, and kcat/KM were not found to be correlated from statistical analysis (Pearson's R=, p= for each of kcat, KM, and kcat/KM).
 
 ![](figure_4.png)
 
@@ -122,17 +104,15 @@ Contrary to initial assumptions, Tm and kcat, KM, and kcat/KM were not found to 
 
 # Discussion
 
-The idea that functional proteins, such as enzymes, must trade stability in order to carry out their functions is widely believed to be a general principle of enzymatic catalysis [Beadle, Tokuriki, RNase paper]. In particular, enzyme active sites, such as the one in BglB, often position charged residues in close proximity in order to present optimal geometry for catalysis. [Fersht] In an enzyme active site such as those found in family 1 glycoside hydrolases, two glutamate residues, one functioning as a nucleophile and the other as an acid/base in a classical Kosland double-displacement mechanism, are positioned at 5.5 A.
-
-The key role of enzymes in performing specific chemical transformations under conditions dictated by the process environment in biotechnology makes the effective modulation of enzyme functional envelope of great importance in biotechnology. On the other side of the functional spectrum, many human diseases are caused by single point mutations to enzymes that result in nonfunctional proteins. In this case, it would be of great benefit to use cheap, fast, and plentiful genomic information to predict the functional effects of SNPs.
+The concept of stability-function tradeoff is a widely-accepted idea that is thought to be a general governing principle of functional proteins such as enzymes. This idea stems from the observation that enzyme active sites, such as the one in BglB, often position charged residues in close proximity in order to present optimal geometry for catalysis. [Fersht]
 
 Together, the importance of enzymes in biotechnology and human disease make the accurate modeling of enzyme stability an important goal of the protein modeling community. Accurate prediction of a point mutation's effect on enzyme stability would unlock rational protein engineering approaches, where the information could be used immediately to rationally engineer an enzyme's functional envelope for a desired situation as has been previously explored \cite{22575958}. Furthermore, understanding the changes in enzyme stability that occur upon point mutations would provide huge insight into understanding inherited diseases of metabolism [cite], cancer [cite], as well as mechanisms by which bacteria become resistant to antibiotics, which is lately a public health menace [cite].
 
-The data set that forms the basis of this study uncovered unexpected structure-function relationships in BglB, including mutants with significant effects on thermal stability not predicted by computational modeling and having no evolutionary precedent in available databases.
+The data set that forms the basis of this study is the largest data set of enzyme single amino acid substitutions for which the kinetic constants kcat, KM, and kcat/KM, as well as protein thermal stability and soluble protein expression in *E. coli* have been explicitly measured for each mutation. The data set presented here uncovered unexpected structure-stability relationships in BglB, including mutants with significant effects on thermal stability not predicted by computational modeling and having no evolutionary precedent in available databases.
 
 Traditionally, studies of this type have sought to design more thermostable mutants. However, we are interested more in less thermostable mutants in the context of human disease. Many inherited disorders of metabolism are caused by random point mutations in germline protein-coding genes. Disease results when the mutant protein lacks a key catalytic residue, or when protein misfolding or instability leads to an inactive form. Since two alleles of metabolic enzymes are simultaneously expressed, a precise quantitative measurement of the kinetic activity and protein stabilty is necessary for the predicition to have any relevance.
 
-The finding that protein melting temperatures and kinetic constants reported in this study were not found to be correlated. This sheds doubt on studies [Romero] that convolute these parameters into specific activity measurements, for one can never be sure the functional parameter that is tuned to result in an inactive mutant. In biotechnology, however, this finding is a boon: it means that kinetics and thermal stability, and perhaps other parameters of the functional envelope, arise from independent (if overlapping) biophysical properties, and thus can be rationally modulated independently. This neatly avoids the "two-objective optimisation problem" assumed to exist by engineers seeing to maximize two parameters (such as kcat and thermal stability) independently [http://pubs.rsc.org/en/content/articlepdf/2015/cs/c4cs00351a]. Whether this finding is relevant to BglB alone is unclear, as other studies have shown a strict linear correlation between delta-G and kcat/km for RNase [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1219248/]. However, it will be impossible to know without large data sets such as the one preseneted here.
+The finding that protein melting temperatures and kinetic constants reported in this study were not found to be correlated. This sheds doubt on studies [Romero] that convolute these parameters into specific activity measurements, for one can never be sure the functional parameter that is tuned to result in an inactive mutant. In biotechnology, however, this finding is a boon: it means that kinetics and thermal stability, and perhaps other parameters of the functional envelope, arise from independent (if overlapping) biophysical properties, and thus can be rationally modulated independently. This neatly avoids the "two-objective optimisation problem" assumed to exist by engineers seeing to maximize two parameters (such as kcat and thermal stability) independently [http://pubs.rsc.org/en/content/articlepdf/2015/cs/c4cs00351a]. Whether this finding is relevant to BglB alone is unclear, as other studies have shown a strict linear correlation between delta-G and kcat/km for RNase [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1219248/]. However, it will be impossible to know without large data sets such as the one presented here.
 
 ---
 
@@ -157,3 +137,10 @@ The finding that protein melting temperatures and kinetic constants reported in 
 [PPI dataset] http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003592
 
 [molec_mech] Molecular mechanisms of disease-causing mutations JBC
+
+
+[Beadle] Structural Bases of Stability–function Tradeoffs in Enzymes
+
+[Tokuriki] How Protein Stability and New Functions Trade Off
+
+[RNase paper]
