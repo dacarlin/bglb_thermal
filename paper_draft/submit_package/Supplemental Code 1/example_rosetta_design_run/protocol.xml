@@ -1,0 +1,34 @@
+<ROSETTASCRIPTS>
+<SCOREFXNS>
+  <ScoreFunction name="myscore" weights="talaris2014_cst" />
+</SCOREFXNS>
+<TASKOPERATIONS>
+  <DetectProteinLigandInterface name="repack_sphere" design="0" catres_interface="1" />
+</TASKOPERATIONS>
+<FILTERS>
+  <EnzScore name="allcst" score_type="cstE" scorefxn="myscore" whole_pose="1" energy_cutoff="100000000" />
+</FILTERS>
+<MOVERS>
+  <MutateResidue name="mutate" target="%%target%%" new_res="%%new_res%%" /> 
+  <AddOrRemoveMatchCsts name="cstadd" cst_instruction="add_new" />
+  <PredesignPerturbMover name="predock" />
+  <EnzRepackMinimize name="cst_opt" cst_opt="1" minimize_rb="1" minimize_sc="1" minimize_bb="0" minimize_lig="1" />
+  <EnzRepackMinimize name="repack_wbb" design="0" repack_only="1" 
+    scorefxn_minimize="myscore" scorefxn_repack="myscore" minimize_rb="1" 
+    minimize_sc="1" minimize_bb="1" minimize_lig="1" min_in_stages="0" backrub="0"  
+    task_operations="repack_sphere" />
+  <ParsedProtocol name="iterate">
+    <Add mover="predock" />
+    <Add mover="cst_opt" />
+    <Add mover="repack_wbb" />
+  </ParsedProtocol>
+  <GenericMonteCarlo name="monte_repack" mover_name="iterate" filter_name="allcst" />
+</MOVERS>
+<APPLY_TO_POSE>
+</APPLY_TO_POSE>
+<PROTOCOLS>
+  <Add mover="cstadd" />
+  <Add mover="mutate" />
+  <Add mover="monte_repack" />
+</PROTOCOLS>
+</ROSETTASCRIPTS>
