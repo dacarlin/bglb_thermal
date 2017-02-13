@@ -1,0 +1,17 @@
+,Pearson correlation to tm
+Electrostatics,-0.24861004355308142
+Solvation Polar,-0.21866683368172052
+total energy,-0.17917864688571808
+energy Ionisation,-0.14311684371015712
+torsional clash,-0.13384060342795792
+Van der Waals clashes,-0.1210954292017605
+Solvation Hydrophobic,-0.04890480632309544
+disulfide,0.026874100741076552
+entropy sidechain,0.04520773827629886
+backbone clash,0.07533591558939212
+Van der Waals,0.07685129326011544
+Sidechain Hbond,0.09155267722218113
+helix dipole,0.11339124256871438
+entropy mainchain,0.19140210777819708
+Backbone Hbond,0.29573575731605417
+cis_bond,
